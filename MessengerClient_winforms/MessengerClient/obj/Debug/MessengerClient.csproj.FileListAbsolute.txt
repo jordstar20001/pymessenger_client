@@ -11,3 +11,16 @@ C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debu
 C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csproj.CoreCompileInputs.cache
 C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.exe
 C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.pdb
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.exe.config
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.exe
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.pdb
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\Newtonsoft.Json.dll
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csprojResolveAssemblyReference.cache
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Main.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Properties.Resources.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.UserAccountManagement.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.GenerateResource.Cache
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.CoreCompileInputs.cache
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.exe
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.pdb
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Menu.resources

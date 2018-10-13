@@ -28,23 +28,24 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnOpen = new System.Windows.Forms.Button();
             this.txtAddress = new System.Windows.Forms.TextBox();
             this.txtPort = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.lblPort = new System.Windows.Forms.Label();
+            this.chkEncryption = new System.Windows.Forms.CheckBox();
             this.SuspendLayout();
             // 
-            // button1
+            // btnOpen
             // 
-            this.button1.Location = new System.Drawing.Point(230, 176);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Open";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btnOpen.Location = new System.Drawing.Point(230, 176);
+            this.btnOpen.Name = "btnOpen";
+            this.btnOpen.Size = new System.Drawing.Size(75, 23);
+            this.btnOpen.TabIndex = 0;
+            this.btnOpen.Text = "Open";
+            this.btnOpen.UseVisualStyleBackColor = true;
+            this.btnOpen.Click += new System.EventHandler(this.button1_Click);
             // 
             // txtAddress
             // 
@@ -87,17 +88,28 @@
             this.lblPort.TabIndex = 5;
             this.lblPort.Text = "Port";
             // 
+            // chkEncryption
+            // 
+            this.chkEncryption.AutoSize = true;
+            this.chkEncryption.Location = new System.Drawing.Point(155, 136);
+            this.chkEncryption.Name = "chkEncryption";
+            this.chkEncryption.Size = new System.Drawing.Size(117, 17);
+            this.chkEncryption.TabIndex = 6;
+            this.chkEncryption.Text = "Encryption enabled";
+            this.chkEncryption.UseVisualStyleBackColor = true;
+            // 
             // Main
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(513, 259);
+            this.Controls.Add(this.chkEncryption);
             this.Controls.Add(this.lblPort);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.txtPort);
             this.Controls.Add(this.txtAddress);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnOpen);
             this.Name = "Main";
             this.Text = "Start";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -108,12 +120,13 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnOpen;
         private System.Windows.Forms.TextBox txtAddress;
         private System.Windows.Forms.TextBox txtPort;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label lblPort;
+        private System.Windows.Forms.CheckBox chkEncryption;
     }
 }
 

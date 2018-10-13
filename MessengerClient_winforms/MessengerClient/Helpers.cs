@@ -27,7 +27,7 @@ namespace MessengerClient
             };
 
             request.Headers.Add("Token", token);
-            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            //request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = new HttpResponseMessage();
             using(HttpClient client = new HttpClient())
@@ -46,6 +46,8 @@ namespace MessengerClient
         /// <returns></returns>
         public async static Task<HttpResponseMessage> GetRequestAsync(string path)
         {
+            // DEBUG: MessageBox.Show(Main.ServerAddress + ":" + Main.ServerPort.ToString() + path);
+
             var request = new HttpRequestMessage
             {
                 RequestUri = new Uri(Main.ServerAddress + ":" + Main.ServerPort.ToString() + path),
@@ -53,7 +55,8 @@ namespace MessengerClient
 
             };
 
-            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            //request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = new HttpResponseMessage();
             using (HttpClient client = new HttpClient())
@@ -113,14 +116,53 @@ namespace MessengerClient
             };
 
 
-            MessageBox.Show("Content: " + JsonConvert.SerializeObject(data));
+            
 
 
 
             
             request.Content = new StringContent(JsonConvert.SerializeObject(data));
             request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
-            MessageBox.Show(request.ToString());
+            
+            var response = new HttpResponseMessage();
+            using (HttpClient client = new HttpClient())
+            {
+                response = await client.SendAsync(request);
+
+            }
+
+            return response;
+        }
+        /// <summary>
+        /// Gets the deserialised object from the JSON found in a response. TODO Exception handling
+        /// </summary>
+        /// <typeparam name="T"></typeparam>
+        /// <param name="response"></param>
+        /// <returns></returns>
+        public async static Task<T> Deserialised<T>(HttpResponseMessage response)
+        {
+            return JsonConvert.DeserializeObject<T>(await response.Content.ReadAsStringAsync());
+
+        }
+
+        /// <summary>
+        /// Create an authorised get request.
+        /// </summary>
+        /// <param name="path">The path to which the request will be sent</param>
+        /// <param name="token">The token that was provided by the server</param>
+        /// <returns></returns>
+        public async static Task<HttpResponseMessage> DeleteRequestAsync(string path, string token)
+        {
+            var request = new HttpRequestMessage
+            {
+                RequestUri = new Uri(Main.ServerAddress + ":" + Main.ServerPort.ToString() + path),
+                Method = HttpMethod.Delete,
+
+            };
+
+            request.Headers.Add("Token", token);
+            //request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
             var response = new HttpResponseMessage();
             using (HttpClient client = new HttpClient())
             {
