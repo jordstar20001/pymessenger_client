@@ -1,0 +1,13 @@
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\MessengerClient.exe.config
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\MessengerClient.exe
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\MessengerClient.pdb
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csprojResolveAssemblyReference.cache
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.Main.resources
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.Properties.Resources.resources
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.UserAccountManagement.resources
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csproj.GenerateResource.Cache
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csproj.CoreCompileInputs.cache
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.exe
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.pdb
