@@ -27,7 +27,7 @@ namespace MessengerClient
             };
 
             request.Headers.Add("Token", token);
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = new HttpResponseMessage();
             using(HttpClient client = new HttpClient())
@@ -53,7 +53,7 @@ namespace MessengerClient
 
             };
 
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = new HttpResponseMessage();
             using (HttpClient client = new HttpClient())
@@ -81,9 +81,11 @@ namespace MessengerClient
 
             };
 
-            request.Headers.Add("Token", token);
-            request.Headers.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
             request.Content = new StringContent(JsonConvert.SerializeObject(data));
+            request.Headers.Add("Token", token);
+            request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+            
+            
             
             var response = new HttpResponseMessage();
             using (HttpClient client = new HttpClient())

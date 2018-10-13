@@ -16,6 +16,7 @@ namespace MessengerClient
     public partial class UserAccountManagement : Form
     {
         
+        
 
         public UserAccountManagement()
         {
@@ -24,38 +25,41 @@ namespace MessengerClient
 
         private async void btnSignup_Click(object sender, EventArgs e)
         {
-            if (!LoginValid())
+            if (!LoginInputValid())
             {
                 // Error message
                 return;
             }
 
 
-            var loginObj = new UserLogin(txtSignupUsername.Text, txtSignupPassword.Text);
+            var loginObj = new API.UserLogin(txtSignupUsername.Text, txtSignupPassword.Text);
 
 
             var response = await Helpers.PostRequestAsync("/1/signup", loginObj);
 
             
-            MessageBox.Show(response.ToString());
+            if(response.StatusCode == System.Net.HttpStatusCode.Created)
+            {
+                MessageBox.Show("Account created! Logging in...");
+                
+            }
         }
 
-        private bool LoginValid()
+        private bool LoginInputValid()
         {
             return true;
         }
-    }
 
-    public class UserLogin
-    {
-        public string username;
-
-        public string password;
-
-        public UserLogin(string username, string password)
+        private async bool LoginUser(string uname, string pword)
         {
-            this.username = username;
-            this.password = password;
+            var loginObj = new API.UserLogin(uname, pword);
+            var response = await Helpers.PostRequestAsync("/1/login", loginObj);
+            // Get JSON / 
+            if(response.StatusCode = System.Net.HttpStatusCode.)
+            JsonConvert.DeserializeObject<>
+            if (response.)
         }
     }
+
+    
 }

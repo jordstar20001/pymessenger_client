@@ -18,6 +18,10 @@ namespace MessengerClient
 
         public static UserAccountManagement userForm;
 
+        public static string UserToken;
+
+        public static string Username;
+
         public Main()
         {
             InitializeComponent();
