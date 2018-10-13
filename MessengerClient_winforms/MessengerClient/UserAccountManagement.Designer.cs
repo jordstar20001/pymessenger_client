@@ -80,6 +80,7 @@
             this.splitContainer1.Panel2.Controls.Add(this.btnLogin);
             this.splitContainer1.Panel2.Controls.Add(this.txtLoginPassword);
             this.splitContainer1.Panel2.Controls.Add(this.txtLoginUsername);
+            this.splitContainer1.Panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.splitContainer1_Panel2_Paint);
             this.splitContainer1.Size = new System.Drawing.Size(394, 400);
             this.splitContainer1.SplitterDistance = 190;
             this.splitContainer1.TabIndex = 1;
@@ -197,6 +198,9 @@
             this.Controls.Add(this.splitContainer1);
             this.Name = "UserAccountManagement";
             this.Text = "Login / Sign Up";
+            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.UserAccountManagement_FormClosing);
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.UserAccountManagement_FormClosed);
+            this.Load += new System.EventHandler(this.UserAccountManagement_Load);
             this.splitContainer1.Panel1.ResumeLayout(false);
             this.splitContainer1.Panel1.PerformLayout();
             this.splitContainer1.Panel2.ResumeLayout(false);

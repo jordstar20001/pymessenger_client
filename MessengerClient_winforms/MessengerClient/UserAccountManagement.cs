@@ -86,7 +86,7 @@ namespace MessengerClient
             {
                 FromAPI.TokenContainer container = await Helpers.Deserialised<FromAPI.TokenContainer>(response);
                 Main.UserToken = container.token;
-                
+                Main.Username = loginObj.username;
             }
 
             return response.StatusCode;
@@ -121,6 +121,26 @@ namespace MessengerClient
                 MessageBox.Show("Error. Check that you are not already logged in elsewhere.");
             }
             
+        }
+
+        private void splitContainer1_Panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void UserAccountManagement_FormClosing(object sender, FormClosingEventArgs e)
+        {
+
+        }
+
+        private void UserAccountManagement_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            //Application.Exit();
+        }
+
+        private void UserAccountManagement_Load(object sender, EventArgs e)
+        {
+
         }
     }
 

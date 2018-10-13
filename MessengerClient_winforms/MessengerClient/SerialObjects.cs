@@ -24,6 +24,18 @@ namespace MessengerClient
                 this.password = password;
             }
         }
+
+        public class CreateRoomDetails
+        {
+            public string username;
+            public List<string> users;
+            public string title;
+            public string description;
+            public int max_users;
+            public string room_password;
+
+            
+        }
     }
 
 
@@ -51,6 +63,20 @@ namespace MessengerClient
         public class OnlineUsersContainer
         {
             public List<string> users;
+        }
+
+        public class AllRoomsContainer
+        {
+            public List<string> rooms;
+        }
+
+        public class SingleRoomContainer
+        {
+            public List<string> users;
+            public string title;
+            public string description;
+            public int max_users;
+            public bool password_enabled;
         }
     }
 }

@@ -49,6 +49,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="CreateRoomDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="CreateRoomDialog.Designer.cs">
+      <DependentUpon>CreateRoomDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="Helpers.cs" />
     <Compile Include="Main.cs">
       <SubType>Form</SubType>
@@ -64,6 +70,12 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RoomPasswordDialog.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="RoomPasswordDialog.Designer.cs">
+      <DependentUpon>RoomPasswordDialog.cs</DependentUpon>
+    </Compile>
     <Compile Include="SerialObjects.cs" />
     <Compile Include="UserAccountManagement.cs">
       <SubType>Form</SubType>
@@ -71,6 +83,9 @@
     <Compile Include="UserAccountManagement.Designer.cs">
       <DependentUpon>UserAccountManagement.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="CreateRoomDialog.resx">
+      <DependentUpon>CreateRoomDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Main.resx">
       <DependentUpon>Main.cs</DependentUpon>
     </EmbeddedResource>
@@ -86,6 +101,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="RoomPasswordDialog.resx">
+      <DependentUpon>RoomPasswordDialog.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="UserAccountManagement.resx">
       <DependentUpon>UserAccountManagement.cs</DependentUpon>
     </EmbeddedResource>

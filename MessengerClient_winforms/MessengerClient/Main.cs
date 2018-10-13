@@ -37,7 +37,7 @@ namespace MessengerClient
             {
 
                 this.Close();
-                this.DestroyHandle();
+                this.Dispose();
             }
         }
 
@@ -78,6 +78,7 @@ namespace MessengerClient
                         userForm = new UserAccountManagement();
                         userForm.Show();
                         this.Hide();
+                        //this.Close();
                     }
 
                     else
