@@ -46,6 +46,7 @@ namespace MessengerClient
         {
             public string owner;
             public string username;
+            public string password;
         }
 
     }

@@ -188,24 +188,38 @@ namespace MessengerClient
 
         private async void btnJoinRoom_Click(object sender, EventArgs e)
         {
-            var passwordInput = "";
+           
             if (RoomSelectedContainer.password_enabled)
             {
                 var passwordForm = new RoomPasswordDialog();
                 var verdict = passwordForm.ShowDialog();
                 if(verdict == DialogResult.OK)
                 {
-                    var password = passwordForm.Password;
+                    var passwordAttempt = passwordForm.Password;
 
                     var request = new ToAPI.JoinChatRoomContainer()
                     {
-                        owner = (string)lstRooms.Items[lstRooms.SelectedIndex]
+                        owner = (string)lstRooms.Items[lstRooms.SelectedIndex],
+                        username = Main.Username,
+                        password = passwordAttempt
                     };
 
-                    var response = await Helpers.PostRequestAsync("/2/chatrooms/join", Main.UserToken, ) 
+                    var response = await Helpers.PostRequestAsync("/2/chatrooms/join", Main.UserToken, request);
 
-                    MessageBox.Show(string.Format("Incorrect password for chatroom '{0}'", RoomSelectedContainer));
-                    return;
+                    if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                    {
+                        MessageBox.Show("Successfully joined room.");
+                    }
+
+                    else
+                    {
+                        var error = (await Helpers.Deserialised<FromAPI.ErrorMessageContainer>(response)).message;
+                        MessageBox.Show(string.Format("Error. {0}", error));
+                        
+                    }
+
+                    
+                    
                 }
 
                 

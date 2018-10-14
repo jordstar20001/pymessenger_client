@@ -12,7 +12,7 @@ namespace MessengerClient
 {
     public partial class RoomPasswordDialog : Form
     {
-        public string Password;
+        public string Password = "";
 
         public RoomPasswordDialog()
         {
