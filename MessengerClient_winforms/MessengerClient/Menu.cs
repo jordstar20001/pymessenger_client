@@ -16,6 +16,8 @@ namespace MessengerClient
 
         private List<string> roomsOnline = new List<string>();
 
+        private FromAPI.SingleRoomContainer RoomSelectedContainer;
+
         public Menu()
         {
             InitializeComponent();
@@ -156,32 +158,58 @@ namespace MessengerClient
 
                 };
                 var response = await Helpers.PostRequestAsync("/2/chatrooms/get", Main.UserToken, request);
-                FromAPI.SingleRoomContainer container = await Helpers.Deserialised<FromAPI.SingleRoomContainer>(response);
+                RoomSelectedContainer = await Helpers.Deserialised<FromAPI.SingleRoomContainer>(response);
 
                 // Set textbox values
 
-                txtTitle.Text = container.title;
+                txtTitle.Text = RoomSelectedContainer.title;
 
                 txtOwner.Text = roomsOnline[lstRooms.SelectedIndex];
 
-                txtUsers.Text = container.users.Count + "/" + container.max_users;
+                txtUsers.Text = RoomSelectedContainer.users.Count + "/" + RoomSelectedContainer.max_users;
 
                 lstRoomUsers.Items.Clear();
 
-                foreach (string user in container.users)
+                foreach (string user in RoomSelectedContainer.users)
                 {
                     lstRoomUsers.Items.Add(user);
                 }
 
-                txtDescription.Text = container.description;
+                txtDescription.Text = RoomSelectedContainer.description;
 
-                chkPasswordProtected.Checked = container.password_enabled;
+                chkPasswordProtected.Checked = RoomSelectedContainer.password_enabled;
             }
             catch
             {
 
             }
 
+        }
+
+        private async void btnJoinRoom_Click(object sender, EventArgs e)
+        {
+            var passwordInput = "";
+            if (RoomSelectedContainer.password_enabled)
+            {
+                var passwordForm = new RoomPasswordDialog();
+                var verdict = passwordForm.ShowDialog();
+                if(verdict == DialogResult.OK)
+                {
+                    var password = passwordForm.Password;
+
+                    var request = new ToAPI.JoinChatRoomContainer()
+                    {
+                        owner = (string)lstRooms.Items[lstRooms.SelectedIndex]
+                    };
+
+                    var response = await Helpers.PostRequestAsync("/2/chatrooms/join", Main.UserToken, ) 
+
+                    MessageBox.Show(string.Format("Incorrect password for chatroom '{0}'", RoomSelectedContainer));
+                    return;
+                }
+
+                
+            }
         }
     }
 }

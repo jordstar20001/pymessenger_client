@@ -41,6 +41,13 @@ namespace MessengerClient
         {
             public string owner;
         }
+
+        public class JoinChatRoomContainer
+        {
+            public string owner;
+            public string username;
+        }
+
     }
 
 

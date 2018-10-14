@@ -12,6 +12,8 @@ namespace MessengerClient
 {
     public partial class RoomPasswordDialog : Form
     {
+        public string Password;
+
         public RoomPasswordDialog()
         {
             InitializeComponent();
@@ -24,6 +26,7 @@ namespace MessengerClient
 
         private void btnOk_Click(object sender, EventArgs e)
         {
+            Password = txtPassword.Text;
             this.DialogResult = DialogResult.OK;
         }
 

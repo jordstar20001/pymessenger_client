@@ -213,6 +213,7 @@
             this.btnJoinRoom.TabIndex = 10;
             this.btnJoinRoom.Text = "Join Room";
             this.btnJoinRoom.UseVisualStyleBackColor = true;
+            this.btnJoinRoom.Click += new System.EventHandler(this.btnJoinRoom_Click);
             // 
             // label3
             // 
