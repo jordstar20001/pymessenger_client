@@ -62,6 +62,10 @@ namespace MessengerClient
         {
             timeCheckForUsers.Enabled = true;
             timeCheckForRooms.Enabled = true;
+
+            txtToken.Text = Main.UserToken;
+            txtUsername.Text = Main.Username;
+
         }
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)
@@ -75,24 +79,25 @@ namespace MessengerClient
             if(response.StatusCode == System.Net.HttpStatusCode.OK)
             {
                 FromAPI.AllRoomsContainer container = await Helpers.Deserialised<FromAPI.AllRoomsContainer>(response);
-                if(roomsOnline != container.rooms)
+                
+                if (roomsOnline != container.rooms)
                 {
                     roomsOnline = container.rooms;
                     var selectedIndex = lstRooms.SelectedIndex;
-                    lstUsersOnline.Items.Clear();
+                    lstRooms.Items.Clear();
                     foreach(string room in roomsOnline)
                     {
-                        lstUsersOnline.Items.Add(room);
+                        lstRooms.Items.Add(room);
                     }
 
                     try
                     {
-                        lstUsersOnline.SelectedIndex = selectedIndex;
+                        lstRooms.SelectedIndex = selectedIndex;
                     }
 
                     catch
                     {
-                        lstUsersOnline.SelectedIndex = -1;
+                        lstRooms.SelectedIndex = -1;
                     }
                 }
                 
@@ -104,10 +109,79 @@ namespace MessengerClient
         {
             var roomCreator = new CreateRoomDialog();
 
-            if(roomCreator.ShowDialog() == DialogResult.OK)
+            var verdict = roomCreator.ShowDialog();
+
+            if (verdict == DialogResult.OK)
             {
+
                 MessageBox.Show("Done!");
             }
+
+            else if(verdict == DialogResult.Abort)
+            {
+                
+                MessageBox.Show("Error. " + roomCreator.ErrorMessage);
+                
+            }
+            
+        }
+
+        private void lstRooms_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(lstRooms.Items.Count == 0)
+            {
+                lstRooms.SelectedIndex = -1;
+                panelSingleRoom.Visible = false;
+            }
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private async void lstRooms_Click(object sender, EventArgs e)
+        {
+
+            if(lstRooms.SelectedIndex != -1)
+            {
+                panelSingleRoom.Visible = true;
+            }
+
+            try
+            {
+                var request = new ToAPI.GetChatRoomContainer()
+                {
+                    owner = roomsOnline[lstRooms.SelectedIndex]
+
+                };
+                var response = await Helpers.PostRequestAsync("/2/chatrooms/get", Main.UserToken, request);
+                FromAPI.SingleRoomContainer container = await Helpers.Deserialised<FromAPI.SingleRoomContainer>(response);
+
+                // Set textbox values
+
+                txtTitle.Text = container.title;
+
+                txtOwner.Text = roomsOnline[lstRooms.SelectedIndex];
+
+                txtUsers.Text = container.users.Count + "/" + container.max_users;
+
+                lstRoomUsers.Items.Clear();
+
+                foreach (string user in container.users)
+                {
+                    lstRoomUsers.Items.Add(user);
+                }
+
+                txtDescription.Text = container.description;
+
+                chkPasswordProtected.Checked = container.password_enabled;
+            }
+            catch
+            {
+
+            }
+
         }
     }
 }

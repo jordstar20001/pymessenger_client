@@ -12,6 +12,8 @@ namespace MessengerClient
 {
     public partial class CreateRoomDialog : Form
     {
+        public string ErrorMessage;
+
         public ToAPI.CreateRoomDetails RoomDetails;
         public CreateRoomDialog()
         {
@@ -39,9 +41,19 @@ namespace MessengerClient
             if(response.StatusCode == System.Net.HttpStatusCode.Created)
             {
                 RoomDetails = roomDetails;
+                this.DialogResult = DialogResult.OK;
             }
 
-            this.DialogResult = DialogResult.OK;
+            else if(response.StatusCode == System.Net.HttpStatusCode.InternalServerError)
+            {
+                var obj = await Helpers.Deserialised<FromAPI.ErrorMessageContainer>(response);
+
+                this.ErrorMessage = obj.message;
+
+                this.DialogResult = DialogResult.Abort;
+            }
+
+            
         }
 
         private void chkPasswordProtected_CheckedChanged(object sender, EventArgs e)

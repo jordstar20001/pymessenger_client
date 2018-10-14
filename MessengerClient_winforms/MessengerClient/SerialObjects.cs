@@ -28,13 +28,18 @@ namespace MessengerClient
         public class CreateRoomDetails
         {
             public string username;
-            public List<string> users;
+            
             public string title;
             public string description;
             public int max_users;
             public string room_password;
 
             
+        }
+
+        public class GetChatRoomContainer
+        {
+            public string owner;
         }
     }
 
