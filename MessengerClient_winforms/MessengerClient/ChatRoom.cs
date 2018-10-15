@@ -57,9 +57,28 @@ namespace MessengerClient
 
         }
 
-        private void timeGetData_Tick(object sender, EventArgs e)
+        private async void timeGetData_Tick(object sender, EventArgs e)
         {
+            var ownerHeader = new Extras.Header()
+            {
+                name = "Owner",
+                value = RoomOwner
+            };
 
+            var response = await Helpers.GetRequestAsync("/2/chatrooms/message", Main.UserToken, ownerHeader);
+            var data = await Helpers.Deserialised<FromAPI.GetMessagesContainer>(response);
+
+            rchTxtMessages.Clear();
+
+            foreach(var message in data.messages)
+            {
+                rchTxtMessages.Text += string.Format("{0} said: {1}\n\n", message.sender, message.message);
+            }
+        }
+
+        private void ChatRoom_Load(object sender, EventArgs e)
+        {
+            timeGetData.Enabled = true;
         }
     }
 }

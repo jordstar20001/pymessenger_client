@@ -30,11 +30,11 @@
         {
             this.components = new System.ComponentModel.Container();
             this.txtMessage = new System.Windows.Forms.TextBox();
-            this.lstMessages = new System.Windows.Forms.ListBox();
             this.btnSend = new System.Windows.Forms.Button();
             this.lstUsers = new System.Windows.Forms.ListBox();
             this.timeGetData = new System.Windows.Forms.Timer(this.components);
             this.btnKickUser = new System.Windows.Forms.Button();
+            this.rchTxtMessages = new System.Windows.Forms.RichTextBox();
             this.SuspendLayout();
             // 
             // txtMessage
@@ -43,14 +43,6 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(304, 20);
             this.txtMessage.TabIndex = 0;
-            // 
-            // lstMessages
-            // 
-            this.lstMessages.FormattingEnabled = true;
-            this.lstMessages.Location = new System.Drawing.Point(40, 39);
-            this.lstMessages.Name = "lstMessages";
-            this.lstMessages.Size = new System.Drawing.Size(364, 524);
-            this.lstMessages.TabIndex = 1;
             // 
             // btnSend
             // 
@@ -84,18 +76,28 @@
             this.btnKickUser.Text = "Kick User";
             this.btnKickUser.UseVisualStyleBackColor = true;
             // 
+            // rchTxtMessages
+            // 
+            this.rchTxtMessages.Location = new System.Drawing.Point(40, 39);
+            this.rchTxtMessages.Name = "rchTxtMessages";
+            this.rchTxtMessages.ReadOnly = true;
+            this.rchTxtMessages.Size = new System.Drawing.Size(364, 524);
+            this.rchTxtMessages.TabIndex = 5;
+            this.rchTxtMessages.Text = "";
+            // 
             // ChatRoom
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(620, 629);
+            this.Controls.Add(this.rchTxtMessages);
             this.Controls.Add(this.btnKickUser);
             this.Controls.Add(this.lstUsers);
             this.Controls.Add(this.btnSend);
-            this.Controls.Add(this.lstMessages);
             this.Controls.Add(this.txtMessage);
             this.Name = "ChatRoom";
             this.Text = "ChatRoom";
+            this.Load += new System.EventHandler(this.ChatRoom_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -104,10 +106,10 @@
         #endregion
 
         private System.Windows.Forms.TextBox txtMessage;
-        private System.Windows.Forms.ListBox lstMessages;
         private System.Windows.Forms.Button btnSend;
         private System.Windows.Forms.ListBox lstUsers;
         private System.Windows.Forms.Timer timeGetData;
         private System.Windows.Forms.Button btnKickUser;
+        private System.Windows.Forms.RichTextBox rchTxtMessages;
     }
 }

@@ -12,6 +12,35 @@ namespace MessengerClient
     class Helpers
     {
         /// <summary>
+        /// Create an authorised get request with optional header.
+        /// </summary>
+        /// <param name="path">The path to which the request will be sent</param>
+        /// <param name="token">The token that was provided by the server</param>
+        /// <returns></returns>
+        public async static Task<HttpResponseMessage> GetRequestAsync(string path, string token, Extras.Header header)
+        {
+            var request = new HttpRequestMessage
+            {
+                RequestUri = new Uri(Main.ServerAddress + ":" + Main.ServerPort.ToString() + path),
+                Method = HttpMethod.Get,
+
+            };
+
+            request.Headers.Add("Token", token);
+            request.Headers.Add(header.name, header.value);
+            //request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var response = new HttpResponseMessage();
+            using (HttpClient client = new HttpClient())
+            {
+                response = await client.SendAsync(request);
+
+            }
+
+            return response;
+        }
+
+        /// <summary>
         /// Create an authorised get request.
         /// </summary>
         /// <param name="path">The path to which the request will be sent</param>

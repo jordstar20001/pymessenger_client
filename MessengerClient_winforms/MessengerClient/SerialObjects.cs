@@ -57,6 +57,8 @@ namespace MessengerClient
             
         }
 
+        
+
     }
 
 
@@ -98,6 +100,17 @@ namespace MessengerClient
             public string description;
             public int max_users;
             public bool password_enabled;
+        }
+
+        public class GetMessagesContainer
+        {
+            public List<RawMessage> messages;
+        }
+
+        public class RawMessage
+        {
+            public string sender;
+            public string message;
         }
     }
 
