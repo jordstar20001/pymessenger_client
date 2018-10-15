@@ -208,7 +208,7 @@ namespace MessengerClient
         }
 
         /// <summary>
-        /// Create an authorised get request.
+        /// Create an authorised delete request.
         /// </summary>
         /// <param name="path">The path to which the request will be sent</param>
         /// <param name="token">The token that was provided by the server</param>
@@ -223,6 +223,39 @@ namespace MessengerClient
             };
 
             request.Headers.Add("Token", token);
+            //request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
+
+            var response = new HttpResponseMessage();
+            using (HttpClient client = new HttpClient())
+            {
+                response = await client.SendAsync(request);
+
+            }
+
+            return response;
+        }
+
+        /// <summary>
+        /// Create an authorised delete request.
+        /// </summary>
+        /// <param name="path">The path to which the request will be sent</param>
+        /// <param name="token">The token that was provided by the server</param>
+        /// <returns></returns>
+        public async static Task<HttpResponseMessage> DeleteRequestAsync(string path, string token, List<Extras.Header> headers)
+        {
+            var request = new HttpRequestMessage
+            {
+                RequestUri = new Uri(Main.ServerAddress + ":" + Main.ServerPort.ToString() + path),
+                Method = HttpMethod.Delete,
+
+            };
+
+            request.Headers.Add("Token", token);
+
+            foreach(var header in headers)
+            {
+                request.Headers.Add(header.name, header.value);
+            }
             //request.Content.Headers.ContentType = new MediaTypeHeaderValue("application/json");
 
             var response = new HttpResponseMessage();

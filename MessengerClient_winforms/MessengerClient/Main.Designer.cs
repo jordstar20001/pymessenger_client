@@ -53,6 +53,7 @@
             this.txtAddress.Name = "txtAddress";
             this.txtAddress.Size = new System.Drawing.Size(221, 20);
             this.txtAddress.TabIndex = 1;
+            this.txtAddress.Text = "jz-software.pw";
             // 
             // txtPort
             // 
@@ -60,6 +61,7 @@
             this.txtPort.Name = "txtPort";
             this.txtPort.Size = new System.Drawing.Size(82, 20);
             this.txtPort.TabIndex = 2;
+            this.txtPort.Text = "21";
             // 
             // label1
             // 

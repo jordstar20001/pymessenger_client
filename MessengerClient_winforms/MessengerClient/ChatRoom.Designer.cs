@@ -43,6 +43,7 @@
             this.txtMessage.Name = "txtMessage";
             this.txtMessage.Size = new System.Drawing.Size(304, 20);
             this.txtMessage.TabIndex = 0;
+            this.txtMessage.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtMessage_KeyDown);
             // 
             // btnSend
             // 
@@ -75,6 +76,7 @@
             this.btnKickUser.TabIndex = 4;
             this.btnKickUser.Text = "Kick User";
             this.btnKickUser.UseVisualStyleBackColor = true;
+            this.btnKickUser.Click += new System.EventHandler(this.btnKickUser_Click);
             // 
             // rchTxtMessages
             // 
@@ -97,6 +99,7 @@
             this.Controls.Add(this.txtMessage);
             this.Name = "ChatRoom";
             this.Text = "ChatRoom";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.ChatRoom_FormClosed);
             this.Load += new System.EventHandler(this.ChatRoom_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

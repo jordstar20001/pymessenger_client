@@ -230,6 +230,34 @@ namespace MessengerClient
 
                 
             }
+
+            else
+            {
+                var passwordAttempt = "";
+
+                var request = new ToAPI.JoinChatRoomContainer()
+                {
+                    owner = (string)lstRooms.Items[lstRooms.SelectedIndex],
+                    username = Main.Username,
+                    password = passwordAttempt
+                };
+
+                var response = await Helpers.PostRequestAsync("/2/chatrooms/join", Main.UserToken, request);
+
+                if (response.StatusCode == System.Net.HttpStatusCode.OK)
+                {
+                    MessageBox.Show("Successfully joined room.");
+                    Main.chatRoomForm = new ChatRoom(RoomSelectedContainer.owner);
+                    Main.chatRoomForm.Show();
+                }
+
+                else
+                {
+                    var error = (await Helpers.Deserialised<FromAPI.ErrorMessageContainer>(response)).message;
+                    MessageBox.Show(string.Format("Error. {0}", error));
+
+                }
+            }
         }
     }
 }

@@ -109,6 +109,7 @@
             this.txtSignupPassword.Name = "txtSignupPassword";
             this.txtSignupPassword.Size = new System.Drawing.Size(114, 20);
             this.txtSignupPassword.TabIndex = 4;
+            this.txtSignupPassword.UseSystemPasswordChar = true;
             // 
             // txtSignupUsername
             // 
@@ -171,6 +172,7 @@
             this.txtLoginPassword.Name = "txtLoginPassword";
             this.txtLoginPassword.Size = new System.Drawing.Size(114, 20);
             this.txtLoginPassword.TabIndex = 9;
+            this.txtLoginPassword.UseSystemPasswordChar = true;
             // 
             // txtLoginUsername
             // 
