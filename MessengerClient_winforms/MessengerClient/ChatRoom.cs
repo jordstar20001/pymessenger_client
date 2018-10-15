@@ -12,6 +12,8 @@ namespace MessengerClient
 {
     public partial class ChatRoom : Form
     {
+         
+
         private string RoomOwner;
 
         public ChatRoom()
@@ -33,8 +35,6 @@ namespace MessengerClient
                 owner = RoomOwner,
                 message = txtMessage.Text
             };
-
-            MessageBox.Show(request.owner);
 
             var response = await Helpers.PostRequestAsync("/2/chatrooms/message", Main.UserToken, request);
 
@@ -68,12 +68,23 @@ namespace MessengerClient
             var response = await Helpers.GetRequestAsync("/2/chatrooms/message", Main.UserToken, ownerHeader);
             var data = await Helpers.Deserialised<FromAPI.GetMessagesContainer>(response);
 
+            rchTxtMessages.SuspendLayout();
+
             rchTxtMessages.Clear();
 
             foreach(var message in data.messages)
             {
-                rchTxtMessages.Text += string.Format("{0} said: {1}\n\n", message.sender, message.message);
+                int lengthOfTxt = rchTxtMessages.Text.Length;
+                int lengthOfMessage = message.message.Length;
+                rchTxtMessages.AppendText(string.Format("{0} SAID: {1}\n\n", message.sender.ToUpper(), message.message));
+                rchTxtMessages.Select(lengthOfTxt, message.sender.Length + " SAID: ".Length);
+                rchTxtMessages.SelectionFont = new Font(rchTxtMessages.Font, FontStyle.Bold);
+                rchTxtMessages.Select(lengthOfTxt + message.sender.Length + " SAID: ".Length, lengthOfMessage);
+                rchTxtMessages.SelectionFont = new Font(rchTxtMessages.Font, FontStyle.Italic);
+                rchTxtMessages.DeselectAll();
             }
+
+            rchTxtMessages.ResumeLayout();
         }
 
         private void ChatRoom_Load(object sender, EventArgs e)

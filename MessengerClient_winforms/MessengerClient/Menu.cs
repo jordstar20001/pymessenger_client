@@ -213,6 +213,8 @@ namespace MessengerClient
                     if (response.StatusCode == System.Net.HttpStatusCode.OK)
                     {
                         MessageBox.Show("Successfully joined room.");
+                        Main.chatRoomForm = new ChatRoom(RoomSelectedContainer.owner);
+                        Main.chatRoomForm.Show();
                     }
 
                     else

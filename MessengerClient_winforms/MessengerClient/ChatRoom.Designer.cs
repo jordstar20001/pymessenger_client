@@ -64,7 +64,7 @@
             // 
             // timeGetData
             // 
-            this.timeGetData.Interval = 2500;
+            this.timeGetData.Interval = 1500;
             this.timeGetData.Tick += new System.EventHandler(this.timeGetData_Tick);
             // 
             // btnKickUser
