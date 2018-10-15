@@ -18,6 +18,8 @@ namespace MessengerClient
 
         public static UserAccountManagement userForm;
 
+        public static ChatRoom chatRoomForm;
+
         public static Menu menuForm;
 
         public static string UserToken;

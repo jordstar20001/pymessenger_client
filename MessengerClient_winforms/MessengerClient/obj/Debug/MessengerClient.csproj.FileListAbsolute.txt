@@ -26,3 +26,4 @@ E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\
 E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Menu.resources
 E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.RoomPasswordDialog.resources
 E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.CreateRoomDialog.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.ChatRoom.resources

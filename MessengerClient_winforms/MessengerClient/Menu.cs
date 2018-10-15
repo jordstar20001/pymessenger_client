@@ -16,7 +16,7 @@ namespace MessengerClient
 
         private List<string> roomsOnline = new List<string>();
 
-        private FromAPI.SingleRoomContainer RoomSelectedContainer;
+        private Extras.SingleRoomContainer RoomSelectedContainer;
 
         public Menu()
         {
@@ -117,6 +117,8 @@ namespace MessengerClient
             {
 
                 MessageBox.Show("Done!");
+                Main.chatRoomForm = new ChatRoom(Main.Username);
+                Main.chatRoomForm.Show();
             }
 
             else if(verdict == DialogResult.Abort)
@@ -158,13 +160,15 @@ namespace MessengerClient
 
                 };
                 var response = await Helpers.PostRequestAsync("/2/chatrooms/get", Main.UserToken, request);
-                RoomSelectedContainer = await Helpers.Deserialised<FromAPI.SingleRoomContainer>(response);
+                RoomSelectedContainer = await Helpers.Deserialised<Extras.SingleRoomContainer>(response);
+
+                RoomSelectedContainer.owner = roomsOnline[lstRooms.SelectedIndex];
 
                 // Set textbox values
 
                 txtTitle.Text = RoomSelectedContainer.title;
 
-                txtOwner.Text = roomsOnline[lstRooms.SelectedIndex];
+                txtOwner.Text = RoomSelectedContainer.owner;
 
                 txtUsers.Text = RoomSelectedContainer.users.Count + "/" + RoomSelectedContainer.max_users;
 

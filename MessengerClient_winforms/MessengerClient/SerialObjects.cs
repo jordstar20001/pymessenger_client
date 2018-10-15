@@ -49,6 +49,14 @@ namespace MessengerClient
             public string password;
         }
 
+        public class SendMessageToChatRoomContainer
+        {
+            public string username;
+            public string owner;
+            public string message;
+            
+        }
+
     }
 
 
@@ -86,6 +94,25 @@ namespace MessengerClient
         public class SingleRoomContainer
         {
             public List<string> users;
+            public string title;
+            public string description;
+            public int max_users;
+            public bool password_enabled;
+        }
+    }
+
+    namespace Extras
+    {
+        public class Header
+        {
+            public string name;
+            public string value;
+        }
+
+        public class SingleRoomContainer
+        {
+            public List<string> users;
+            public string owner;
             public string title;
             public string description;
             public int max_users;
