@@ -1,0 +1,145 @@
+﻿<UserControl x:Name="userControl" x:Class="MessengerClient.Splash"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:MessengerClient"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="800" Foreground="Black" FontWeight="Normal" FontStyle="Normal" FontFamily="Modern No. 20" FontSize="14" Loaded="UserControl_Loaded" PreviewKeyDown="userControl_PreviewKeyDown" Cursor="Wait" UseLayoutRounding="True" PreviewMouseLeftButtonDown="userControl_PreviewMouseLeftButtonDown">
+    <UserControl.Resources>
+        <Storyboard x:Key="strybrdLoad">
+            <StringAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="textBlock1">
+                <DiscreteStringKeyFrame KeyTime="0:0:0.3" Value="M"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:0.4" Value="Me"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:0.5" Value="Mes"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:0.6" Value="Mess"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:0.7" Value="Messa"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:0.8" Value="Messag"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:0.9" Value="Message"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1" Value="Messages"/>
+            </StringAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="textBlock">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <StringAnimationUsingKeyFrames Storyboard.TargetProperty="(TextBlock.Text)" Storyboard.TargetName="textBlock1_Copy">
+                <DiscreteStringKeyFrame KeyTime="0:0:1.3" Value="B"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1.4" Value="By"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1.5" Value="By "/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1.6" Value="By J"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1.7" Value="By Jo"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1.8" Value="By Jor"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:1.9" Value="By Jord"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2" Value="By Jorda"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.1" Value="By Jordan"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.2" Value="By Jordan "/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.3" Value="By Jordan Z"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.4" Value="By Jordan Zd"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.5" Value="By Jordan Zdi"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.6" Value="By Jordan Zdim"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.7" Value="By Jordan Zdimi"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.8" Value="By Jordan Zdimir"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:2.9" Value="By Jordan Zdimiro"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3" Value="By Jordan Zdimirov"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.1" Value="By Jordan Zdimirovi"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.2" Value="By Jordan Zdimirovic"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.3" Value="By Jordan Zdimirovic "/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.4" Value="By Jordan Zdimirovic &amp;"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.5" Value="By Jordan Zdimirovic &amp; "/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.6" Value="By Jordan Zdimirovic &amp; A"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.7" Value="By Jordan Zdimirovic &amp; Ai"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:3.8" Value="By Jordan Zdimirovic &amp; Aid"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4" Value="By Jordan Zdimirovic &amp; Aide"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.1" Value="By Jordan Zdimirovic &amp; Aiden"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.2" Value="By Jordan Zdimirovic &amp; Aiden "/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.3" Value="By Jordan Zdimirovic &amp; Aiden Q"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.4" Value="By Jordan Zdimirovic &amp; Aiden Qu"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.6" Value="By Jordan Zdimirovic &amp; Aiden Qui"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.8" Value="By Jordan Zdimirovic &amp; Aiden Quin"/>
+                <DiscreteStringKeyFrame KeyTime="0:0:4.9" Value="By Jordan Zdimirovic &amp; Aiden Quinn"/>
+            </StringAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="userControl">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:6" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:7" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" Storyboard.TargetName="image">
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="strybrdCloseMouseEnter">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="lblClose">
+                <EasingColorKeyFrame KeyTime="0:0:0.3" Value="Red"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblClose">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.3"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblClose">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.3"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="strybrdCloseMouseLeave">
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(TextElement.Foreground).(SolidColorBrush.Color)" Storyboard.TargetName="lblClose">
+                <SplineColorKeyFrame KeyTime="0" Value="#FFFA0000"/>
+                <SplineColorKeyFrame KeyTime="0:0:0.3" Value="Black"/>
+            </ColorAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblClose">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1.3"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblClose">
+                <SplineDoubleKeyFrame KeyTime="0" Value="1.3"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+    </UserControl.Resources>
+    <UserControl.Triggers>
+        <EventTrigger RoutedEvent="FrameworkElement.Loaded">
+            <BeginStoryboard Storyboard="{StaticResource strybrdLoad}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseEnter" SourceName="lblClose">
+            <BeginStoryboard x:Name="strybrdCloseMouseEnter_BeginStoryboard" Storyboard="{StaticResource strybrdCloseMouseEnter}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="UIElement.MouseLeave" SourceName="lblClose">
+            <BeginStoryboard x:Name="strybrdCloseMouseLeave_BeginStoryboard" Storyboard="{StaticResource strybrdCloseMouseLeave}"/>
+        </EventTrigger>
+    </UserControl.Triggers>
+    <Viewbox Margin="50">
+        <Grid Height="450" Width="800">
+            <Grid.Effect>
+                <DropShadowEffect ShadowDepth="0" BlurRadius="100" Opacity="0.5">
+
+                </DropShadowEffect>
+            </Grid.Effect>
+            <Grid.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFBDF9F1" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Grid.Background>
+            <TextBlock x:Name="textBlock" HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Top" FontSize="200" FontFamily="Modern No. 20" FontWeight="Normal" FontStyle="Normal" Height="440" Width="790" Foreground="#FF827F7F" Margin="10,0,0,0">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect><Run Text="j"/><Run FontSize="72" Text=" "/></TextBlock>
+            <TextBlock x:Name="textBlock1" TextWrapping="Wrap" Margin="58.148,140.847,32.31,220.995" FontSize="72" FontFamily="Modern No. 20" Foreground="Black">
+                <TextBlock.Effect>
+                    <DropShadowEffect/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock x:Name="textBlock1_Copy" TextWrapping="Wrap" Margin="217.429,399.652,10,10" FontSize="36" FontFamily="Modern No. 20" Foreground="Black"/>
+            <Label Name="lblVersion" Content="Unknown Version" HorizontalAlignment="Left" Margin="5,414,0,0" VerticalAlignment="Top" FontSize="18" FontWeight="Normal" FontStyle="Normal"/>
+            <Label x:Name="lblClose" Content="r" HorizontalAlignment="Right" VerticalAlignment="Top" FontFamily="Webdings" Height="20" Width="20" Padding="0" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="Black" RenderTransformOrigin="0.5,0.5" ToolTip="Close (Esc)" MouseLeftButtonUp="lblClose_MouseLeftButtonUp" FontSize="20" Cursor="Arrow" ForceCursor="True">
+                <Label.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Label.RenderTransform>
+            </Label>
+            <Image x:Name="image" Margin="452,41,32,221" Source="icon.png" Opacity="0"/>
+
+        </Grid>
+    </Viewbox>
+</UserControl>

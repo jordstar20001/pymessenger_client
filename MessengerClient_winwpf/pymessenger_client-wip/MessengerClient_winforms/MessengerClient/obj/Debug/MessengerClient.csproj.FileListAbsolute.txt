@@ -1,0 +1,63 @@
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\MessengerClient.exe.config
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\MessengerClient.exe
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\MessengerClient.pdb
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\Newtonsoft.Json.dll
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\bin\Debug\Newtonsoft.Json.xml
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csprojResolveAssemblyReference.cache
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.Main.resources
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.Properties.Resources.resources
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.UserAccountManagement.resources
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csproj.GenerateResource.Cache
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.csproj.CoreCompileInputs.cache
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.exe
+C:\Users\jordan.zdimirovic\source\repos\MessengerClient\MessengerClient\obj\Debug\MessengerClient.pdb
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.exe.config
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.exe
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.pdb
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\bin\Debug\Newtonsoft.Json.dll
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csprojResolveAssemblyReference.cache
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Main.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Properties.Resources.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.UserAccountManagement.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.GenerateResource.Cache
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.CoreCompileInputs.cache
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.exe
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.pdb
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Menu.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.RoomPasswordDialog.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.CreateRoomDialog.resources
+E:\Github\pymessenger_client\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.ChatRoom.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlMessage.g.cs
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlMessenger.g.cs
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient_MarkupCompile.cache
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient_MarkupCompile.lref
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.exe
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.pdb
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.exe.config
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.exe
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\MessengerClient.pdb
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlMessage.baml
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlMessenger.baml
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.g.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.ChatRoom.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.CreateRoomDialog.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Main.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Menu.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.Properties.Resources.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.RoomPasswordDialog.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.UserAccountManagement.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.GenerateResource.cache
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.CoreCompileInputs.cache
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.CopyComplete
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\Splash.g.cs
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\Splash.baml
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.SplashScreen.resources
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\System.Runtime.WindowsRuntime.dll
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\Windows.winmd
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\System.Runtime.WindowsRuntime.xml
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlPasswordRevealBtn.g.cs
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlPasswordRevealBtn.baml
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient_Content.g.cs
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\bin\Debug\icon.png
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csprojAssemblyReference.cache
+C:\Users\Aiden\Downloads\pymessenger_client-wip (1)\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.AboutBox.resources
