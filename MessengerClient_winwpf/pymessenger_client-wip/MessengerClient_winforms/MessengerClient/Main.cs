@@ -30,6 +30,10 @@ namespace MessengerClient
 
         public static NotifyIcon MainNotifyIcon = new NotifyIcon();
 
+        System.Windows.Controls.ContextMenu iconMenu = new System.Windows.Controls.ContextMenu();
+
+        System.Windows.Controls.MenuItem iconMenuItemExit = new System.Windows.Controls.MenuItem();
+
         System.Windows.Window window = new System.Windows.Window();
 
         public Main()
@@ -70,9 +74,26 @@ namespace MessengerClient
             var asForm = System.Windows.Automation.AutomationElement.FromHandle(this.Handle);
             MainNotifyIcon.Icon = Properties.Resources.icon;
             MainNotifyIcon.Visible = true;
+            MainNotifyIcon.Click += MainNotifyIcon_Click;
+            iconMenuItemExit.Header = "Exit";
+            iconMenu.Items.Add(iconMenuItemExit);
+            iconMenuItemExit.Click += IconMenuItemExit_Click;
             txtAddress.Text = Properties.Settings.Default.messageServer;
-            txtPort.Text = Properties.Settings.Default.messageServerPort;
+            txtPort.Value = Properties.Settings.Default.messageServerPort;
             
+        }
+
+        private void MainNotifyIcon_Click(object sender, EventArgs e)
+        {
+            iconMenu.IsOpen = true;
+        }
+
+        private void IconMenuItemExit_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            if (MessageBox.Show("Are you sure you want to exit?", Application.ProductName, MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                Application.Exit();
+            }
         }
 
         private void TmrMain_Tick(object sender, EventArgs e)
@@ -115,20 +136,20 @@ namespace MessengerClient
                         userForm = new UserAccountManagement();
                         userForm.Show();
                         Properties.Settings.Default.messageServer = txtAddress.Text;
-                        Properties.Settings.Default.messageServerPort = txtAddress.Text;
+                        Properties.Settings.Default.messageServerPort = txtPort.Value;
                         this.Hide();
                         //this.Close();
                     }
 
                     else
                     {
-                        MessageBox.Show("Error. Server may be offline.");
+                        MessageBox.Show("Error. Server may be offline.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
 
                 catch
                 {
-                    MessageBox.Show("Error. Either server not found at that address, or encryption does not match your selection.");
+                    MessageBox.Show("Error. Either server not found at that address, or encryption does not match your selection.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 

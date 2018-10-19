@@ -41,6 +41,7 @@
             this.chkViewPassword = new System.Windows.Forms.CheckBox();
             this.panelPassword = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.usrCtrlPasswordRevealBtn1 = new MessengerClient.usrCtrlPasswordRevealBtn();
             ((System.ComponentModel.ISupportInitialize)(this.numMaxUsers)).BeginInit();
@@ -105,6 +106,7 @@
             // 
             // txtTitle
             // 
+            this.txtTitle.AllowDrop = true;
             this.txtTitle.Location = new System.Drawing.Point(283, 86);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitle.Name = "txtTitle";
@@ -114,6 +116,7 @@
             // txtDescription
             // 
             this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.EnableAutoDragDrop = true;
             this.txtDescription.Location = new System.Drawing.Point(163, 245);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
@@ -189,6 +192,19 @@
             this.label1.TabIndex = 5;
             this.label1.Text = "Description:";
             // 
+            // btnClose
+            // 
+            this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnClose.Location = new System.Drawing.Point(162, 623);
+            this.btnClose.Margin = new System.Windows.Forms.Padding(4);
+            this.btnClose.Name = "btnClose";
+            this.btnClose.Size = new System.Drawing.Size(444, 30);
+            this.btnClose.TabIndex = 10;
+            this.btnClose.Text = "Cancel";
+            this.btnClose.UseVisualStyleBackColor = true;
+            this.btnClose.Click += new System.EventHandler(this.btnCreateRoom_Click);
+            // 
             // elementHost1
             // 
             this.elementHost1.Location = new System.Drawing.Point(416, 4);
@@ -200,14 +216,17 @@
             // 
             // CreateRoomDialog
             // 
+            this.AcceptButton = this.btnCreateRoom;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(756, 697);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelPassword);
             this.Controls.Add(this.numMaxUsers);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.chkPasswordProtected);
+            this.Controls.Add(this.btnClose);
             this.Controls.Add(this.btnCreateRoom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTitle);
@@ -219,7 +238,9 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "CreateRoomDialog";
-            this.Text = "CreateRoomDialog";
+            this.ShowInTaskbar = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.Text = "Create Room";
             this.Load += new System.EventHandler(this.CreateRoomDialog_Load);
             ((System.ComponentModel.ISupportInitialize)(this.numMaxUsers)).EndInit();
             this.panelPassword.ResumeLayout(false);
@@ -245,5 +266,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private usrCtrlPasswordRevealBtn usrCtrlPasswordRevealBtn1;
+        private System.Windows.Forms.Button btnClose;
     }
 }

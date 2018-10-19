@@ -107,7 +107,7 @@
             this.elementHost1.Location = new System.Drawing.Point(0, 0);
             this.elementHost1.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(827, 849);
+            this.elementHost1.Size = new System.Drawing.Size(782, 752);
             this.elementHost1.TabIndex = 6;
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.usrCtrlMessage1;
@@ -116,7 +116,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
-            this.ClientSize = new System.Drawing.Size(827, 849);
+            this.ClientSize = new System.Drawing.Size(782, 752);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.rchTxtMessages);
             this.Controls.Add(this.btnKickUser);
@@ -126,6 +126,7 @@
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MinimumSize = new System.Drawing.Size(500, 400);
             this.Name = "ChatRoom";
             this.Text = "Chat Room";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.ChatRoom_FormClosing);

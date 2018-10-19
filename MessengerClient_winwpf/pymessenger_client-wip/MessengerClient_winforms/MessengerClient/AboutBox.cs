@@ -106,5 +106,15 @@ namespace MessengerClient
         {
             this.Font = SystemFonts.MessageBoxFont;
         }
+
+        private void lnkJZ_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://jz-software.pw/");
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            System.Diagnostics.Process.Start("http://quinns-computing.firebaseapp.com");
+        }
     }
 }

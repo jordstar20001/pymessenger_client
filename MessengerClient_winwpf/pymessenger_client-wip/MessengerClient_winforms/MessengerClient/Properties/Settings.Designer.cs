@@ -38,9 +38,9 @@ namespace MessengerClient.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("21")]
-        public string messageServerPort {
+        public decimal messageServerPort {
             get {
-                return ((string)(this["messageServerPort"]));
+                return ((decimal)(this["messageServerPort"]));
             }
             set {
                 this["messageServerPort"] = value;
@@ -49,7 +49,7 @@ namespace MessengerClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("")]
+        [global::System.Configuration.DefaultSettingValueAttribute("0")]
         public string LastUserName {
             get {
                 return ((string)(this["LastUserName"]));

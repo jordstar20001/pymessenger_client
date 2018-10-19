@@ -59,7 +59,7 @@
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(462, 60);
             this.btnLogin.TabIndex = 6;
-            this.btnLogin.Text = "Login";
+            this.btnLogin.Text = "Log in";
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
@@ -142,9 +142,9 @@
             this.label4.Location = new System.Drawing.Point(32, 275);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(70, 20);
+            this.label4.Size = new System.Drawing.Size(73, 20);
             this.label4.TabIndex = 7;
-            this.label4.Text = "Password";
+            this.label4.Text = "Password:";
             // 
             // label3
             // 
@@ -152,9 +152,9 @@
             this.label3.Location = new System.Drawing.Point(32, 199);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(75, 20);
+            this.label3.Size = new System.Drawing.Size(78, 20);
             this.label3.TabIndex = 6;
-            this.label3.Text = "Username";
+            this.label3.Text = "Username:";
             // 
             // txtSignupPassword
             // 
@@ -179,15 +179,14 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Modern No. 20", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(206, 77);
+            this.label1.Location = new System.Drawing.Point(20, 77);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(110, 29);
+            this.label1.Size = new System.Drawing.Size(485, 29);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Sign Up";
-            this.label1.Visible = false;
+            this.label1.Text = "Sign In";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // btnSignup
             // 
@@ -198,7 +197,7 @@
             this.btnSignup.Name = "btnSignup";
             this.btnSignup.Size = new System.Drawing.Size(462, 58);
             this.btnSignup.TabIndex = 7;
-            this.btnSignup.Text = "Sign Up";
+            this.btnSignup.Text = "Sign up";
             this.btnSignup.UseVisualStyleBackColor = true;
             this.btnSignup.Click += new System.EventHandler(this.btnSignup_Click);
             // 
@@ -210,7 +209,7 @@
             this.label5.Location = new System.Drawing.Point(13, 9);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(528, 62);
+            this.label5.Size = new System.Drawing.Size(498, 62);
             this.label5.TabIndex = 8;
             this.label5.Text = "Welcome";
             this.label5.TextAlign = System.Drawing.ContentAlignment.TopCenter;

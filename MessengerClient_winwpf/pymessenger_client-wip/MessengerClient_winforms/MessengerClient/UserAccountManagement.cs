@@ -26,6 +26,7 @@ namespace MessengerClient
         private bool exitOnClose = true;
         private async void btnSignup_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             Properties.Settings.Default.LastUserName = txtSignupUsername.Text;
 
             var uName = txtSignupUsername.Text;
@@ -35,6 +36,7 @@ namespace MessengerClient
             if (!LoginInputValid())
             {
                 // Error message
+                this.Enabled = true;
                 return;
             }
 
@@ -61,12 +63,12 @@ namespace MessengerClient
 
                 else if(statusCode == System.Net.HttpStatusCode.Forbidden)
                 {
-                    MessageBox.Show("Error. User not found.");
+                    MessageBox.Show("Error. User not found.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 else if(statusCode == System.Net.HttpStatusCode.InternalServerError)
                 {
-                    MessageBox.Show("Error. Check that you are not already logged in elsewhere.");
+                    MessageBox.Show("Error. Ensure that your username and password are correcnt and check that you are not already logged in elsewhere.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
 
@@ -74,6 +76,7 @@ namespace MessengerClient
             {
                 MessageBox.Show("Error when signing up. " + (await Helpers.Deserialised<FromAPI.ErrorMessageContainer>(response)).message); 
             }
+            this.Enabled = true;
         }
 
         private bool LoginInputValid()
@@ -120,12 +123,12 @@ namespace MessengerClient
 
             else if (statusCode == System.Net.HttpStatusCode.Forbidden)
             {
-                MessageBox.Show("Error. User not found.", Application.ProductName);
+                MessageBox.Show("Error. User not found.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
 
             else if (statusCode == System.Net.HttpStatusCode.InternalServerError)
             {
-                MessageBox.Show("Error. Check that you are not already logged in elsewhere.", Application.ProductName);
+                MessageBox.Show("Error. Ensure that your username and password are correcnt and check that you are not already logged in elsewhere.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             this.Enabled = true;
             
@@ -156,6 +159,9 @@ namespace MessengerClient
 
         private void UserAccountManagement_Load(object sender, EventArgs e)
         {
+            btnLogin.Font = SystemFonts.MessageBoxFont;
+            btnSignup.Font = SystemFonts.MessageBoxFont;
+            label1.Text = Main.ServerAddress;
             usrCtrlPasswordRevealBtn2.btnRevealPassword.PreviewMouseDown += UsrCtrlPasswordRevealBtn1_MouseDown;
             usrCtrlPasswordRevealBtn2.btnRevealPassword.PreviewMouseUp += UsrCtrlPasswordRevealBtn1_MouseUp;
             usrCtrlPasswordRevealBtn2.btnRevealPassword.PreviewKeyUp += UsrCtrlPasswordRevealBtn2_KeyDown;

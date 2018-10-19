@@ -5,11 +5,11 @@
     <Setting Name="messageServer" Type="System.String" Scope="User">
       <Value Profile="(Default)">jz-software.pw</Value>
     </Setting>
-    <Setting Name="messageServerPort" Type="System.String" Scope="User">
+    <Setting Name="messageServerPort" Type="System.Decimal" Scope="User">
       <Value Profile="(Default)">21</Value>
     </Setting>
     <Setting Name="LastUserName" Type="System.String" Scope="User">
-      <Value Profile="(Default)" />
+      <Value Profile="(Default)">0</Value>
     </Setting>
   </Settings>
 </SettingsFile>
