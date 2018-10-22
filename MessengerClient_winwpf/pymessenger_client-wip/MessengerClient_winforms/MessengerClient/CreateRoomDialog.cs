@@ -62,6 +62,7 @@ namespace MessengerClient
 
         private async void btnCreateRoom_Click(object sender, EventArgs e)
         {
+            this.Enabled = false;
             var roomDetails = new ToAPI.CreateRoomDetails()
             {
                 description = txtDescription.Text,
@@ -86,7 +87,14 @@ namespace MessengerClient
                 this.ErrorMessage = obj.message;
 
                 this.DialogResult = DialogResult.Abort;
+
+                MessageBox.Show("Error. " + this.ErrorMessage, Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+            else
+            {
+                MessageBox.Show("An unknown error occurred.", Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            this.Enabled = true;
 
             
         }

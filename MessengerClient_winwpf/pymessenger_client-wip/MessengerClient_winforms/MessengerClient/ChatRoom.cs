@@ -33,6 +33,8 @@ namespace MessengerClient
 
         private string RoomOwner;
 
+        private string users;
+
         public ChatRoom()
         {
             InitializeComponent();
@@ -141,25 +143,44 @@ namespace MessengerClient
 
                 var respDict = await Helpers.Deserialised<FromAPI.SingleRoomContainer>(usersResponse);
 
-                usrCtrlMessage1.lstUsers.Items.Clear();
+
 
                 //Users.Clear();
 
+                string newUsers = "";
+
                 foreach (var user in respDict.users)
                 {
-                    usrCtrlMessage1.lstUsers.Items.Add(user);
+                    newUsers = newUsers + "\n" + user;
                     //Users.Add(user);
                 }
+                if (newUsers != users)
+                {
+                    //ListBox.SelectedIndexCollection indicies = lstUsers.SelectedIndices;
+                    users = "";
+                    usrCtrlMessage1.lstUsers.Items.Clear();
+                    foreach (var user in respDict.users)
+                    {
+                        users = users + "\n" + user;
+                        usrCtrlMessage1.lstUsers.Items.Add(user);
+                        //Users.Add(user);
+                    }
+                    //usrCtrlMessage1.lstUsers.set
+                    //foreach (var index in indicies)
+                    //{
+
+                    //}
 
 
 
-                //foreach (var user in Users)
-                //{
-                //    usrCtrlMessage1.lstUsers.Items.Add(user);
-                //}
+                    //foreach (var user in Users)
+                    //{
+                    //    usrCtrlMessage1.lstUsers.Items.Add(user);
+                    //}
 
 
 
+                }
             }
             catch { }
             
@@ -245,20 +266,25 @@ namespace MessengerClient
             catch
             {
 
-                throw;
             }
             usrCtrlMessage1.btnSend.Click += BtnSend_Click;
             usrCtrlMessage1.btnLeave.Click += BtnLeave_Click;
             usrCtrlMessage1.sldrOpacity.ValueChanged += SldrOpacity_ValueChanged;
             usrCtrlMessage1.menuItemKick.Click += MenuItemCopy_Click;
+            usrCtrlMessage1.chkboxTopmost.Click += ChkboxTopmost_Click;
             timeGetData.Enabled = true;
+        }
+
+        private void ChkboxTopmost_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            this.TopMost = (bool)usrCtrlMessage1.chkboxTopmost.IsChecked;
         }
 
         private async void MenuItemCopy_Click(object sender, System.Windows.RoutedEventArgs e)
         {
 
            //MessageBox.Show("T");
-                foreach (String userToKick in usrCtrlMessage1.lstMessages.SelectedItems)
+                foreach (string userToKick in usrCtrlMessage1.lstUsers.SelectedItems)
                 {
                     //var userToKick = (string)lstUsers.Items[lstUsers.SelectedIndex];
 

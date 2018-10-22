@@ -115,7 +115,7 @@
                     </ContextMenu>
                 </ListBox.ContextMenu>
             </ListBox>
-            <TextBox x:Name="txtMessage" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" VerticalScrollBarVisibility="Auto" TextChanged="txtMessage_TextChanged" RenderTransformOrigin="0.5,0.5" Margin="0,0,218,-0.4">
+            <TextBox x:Name="txtMessage" TextWrapping="Wrap" VerticalAlignment="Bottom" Height="63" VerticalScrollBarVisibility="Auto" TextChanged="txtMessage_TextChanged" RenderTransformOrigin="0.5,0.5" Margin="0,0,218,-0.4" SpellCheck.IsEnabled="True">
                 <TextBox.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -135,7 +135,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnEmoji" Content="J" HorizontalAlignment="Right" Height="62.794" VerticalAlignment="Bottom" Width="67.794" Click="btnEmoji_Click" RenderTransformOrigin="0.5,0.5" ToolTip="emoji" Margin="0,0,72.794,0" FontFamily="Wingdings" FontSize="24">
+            <Button x:Name="btnEmoji" Content="J" HorizontalAlignment="Right" Height="62.794" VerticalAlignment="Bottom" Width="67.794" Click="btnEmoji_Click" RenderTransformOrigin="0.5,0.5" ToolTip="emoji" Margin="0,0,72.794,0" FontFamily="Wingdings" FontSize="36">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -145,7 +145,7 @@
                     </TransformGroup>
                 </Button.RenderTransform>
             </Button>
-            <Button x:Name="btnTK" Content="&#xE087;" HorizontalAlignment="Right" Height="63" VerticalAlignment="Bottom" Width="67" RenderTransformOrigin="0.5,0.5" ToolTip="Launch virtual keyboard" Margin="0,0,146,-0.4" FontFamily="Segoe UI Symbol" FontSize="24" Click="btnTK_Click">
+            <Button x:Name="btnTK" Content="7" HorizontalAlignment="Right" Height="63" VerticalAlignment="Bottom" Width="67" RenderTransformOrigin="0.5,0.5" ToolTip="Launch virtual keyboard" Margin="0,0,146,-0.4" FontFamily="Wingdings" FontSize="36" Click="btnTK_Click">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -183,7 +183,7 @@
                     <TranslateTransform X="200"/>
                 </TransformGroup>
             </Grid.RenderTransform>
-            <DockPanel x:Name="dockPanel" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,120">
+            <DockPanel x:Name="dockPanel" RenderTransformOrigin="0.5,0.5" Margin="0,0,0,140">
                 <DockPanel.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -207,7 +207,9 @@
 
             </Button>
             <Slider x:Name="sldrOpacity" VerticalAlignment="Bottom" Margin="10,0,10,50" Height="20" Minimum="0.2" Maximum="1" LargeChange="0.1" SmallChange="0.01" ToolTip="Change opacity" AutoToolTipPlacement="TopLeft" Value="1" AutoToolTipPrecision="2"/>
-            <CheckBox Content="Notifications" VerticalAlignment="Bottom" Margin="10,0,10,80" FontSize="14" IsChecked="True" IsEnabled="False"/>
+            <CheckBox x:Name="chkboxNotifications" Content="Notifications" VerticalAlignment="Bottom" Margin="10,0,10,100.6" FontSize="14" IsChecked="True" IsEnabled="False"/>
+            <CheckBox x:Name="chkboxTopmost" Content="Keep window on top" VerticalAlignment="Bottom" Margin="10,0,10,118.6" FontSize="14"/>
+            <CheckBox x:Name="chkboxSpellCheck" Content="Enable spellcheck" VerticalAlignment="Bottom" Margin="10,0,10,82.6" FontSize="14" IsChecked="True" Click="chkboxSpellCheck_Click"/>
         </Grid>
     </Grid>
 </UserControl>

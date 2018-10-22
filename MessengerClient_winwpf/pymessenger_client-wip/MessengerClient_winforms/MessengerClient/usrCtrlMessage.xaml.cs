@@ -128,5 +128,10 @@ namespace MessengerClient
                 }
             }
         }
+
+        private void chkboxSpellCheck_Click(object sender, RoutedEventArgs e)
+        {
+            txtMessage.SpellCheck.IsEnabled = (bool)chkboxSpellCheck.IsChecked;
+        }
     }
 }

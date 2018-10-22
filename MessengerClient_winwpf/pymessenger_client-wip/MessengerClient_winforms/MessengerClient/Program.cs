@@ -27,7 +27,7 @@ namespace MessengerClient
 
         private static void Application_ThreadException(object sender, System.Threading.ThreadExceptionEventArgs e)
         {
-            // Put exception handling code here!
+            // Sweeps the error under the rug
             return;
         }
 

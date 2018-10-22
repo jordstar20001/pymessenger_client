@@ -34,6 +34,8 @@ namespace MessengerClient
 
         System.Windows.Controls.MenuItem iconMenuItemExit = new System.Windows.Controls.MenuItem();
 
+        System.Windows.Controls.MenuItem iconMenuItemAbout = new System.Windows.Controls.MenuItem();
+
         System.Windows.Window window = new System.Windows.Window();
 
         public Main()
@@ -75,18 +77,34 @@ namespace MessengerClient
             MainNotifyIcon.Icon = Properties.Resources.icon;
             MainNotifyIcon.Visible = true;
             MainNotifyIcon.Click += MainNotifyIcon_Click;
+            iconMenuItemAbout.Header = "About";
+            iconMenu.Items.Add(iconMenuItemAbout);
             iconMenuItemExit.Header = "Exit";
             iconMenu.Items.Add(iconMenuItemExit);
             iconMenuItemExit.Click += IconMenuItemExit_Click;
+            iconMenuItemAbout.Click += IconMenuItemAbout_Click;
             txtAddress.Text = Properties.Settings.Default.messageServer;
             txtPort.Value = Properties.Settings.Default.messageServerPort;
             chkEncryption.Checked = Properties.Settings.Default.useEncryption;
             
         }
 
+        private void IconMenuItemAbout_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
+        }
+
         private void MainNotifyIcon_Click(object sender, EventArgs e)
         {
-            iconMenu.IsOpen = true;
+            if (iconMenu.IsOpen == false)
+            {
+                iconMenu.IsOpen = true;
+            } 
+            else if (iconMenu.IsOpen == true)
+            {
+                iconMenu.IsOpen = false;
+            }
         }
 
         private void IconMenuItemExit_Click(object sender, System.Windows.RoutedEventArgs e)
