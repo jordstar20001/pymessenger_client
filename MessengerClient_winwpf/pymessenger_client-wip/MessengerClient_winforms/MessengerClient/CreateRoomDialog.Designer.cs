@@ -40,12 +40,14 @@
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.chkViewPassword = new System.Windows.Forms.CheckBox();
             this.panelPassword = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.btnClose = new System.Windows.Forms.Button();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.usrCtrlPasswordRevealBtn1 = new MessengerClient.usrCtrlPasswordRevealBtn();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnClose = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.numMaxUsers)).BeginInit();
             this.panelPassword.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label5
@@ -73,10 +75,11 @@
             // 
             this.chkPasswordProtected.AutoSize = true;
             this.chkPasswordProtected.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.chkPasswordProtected.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.chkPasswordProtected.Location = new System.Drawing.Point(307, 388);
             this.chkPasswordProtected.Margin = new System.Windows.Forms.Padding(4);
             this.chkPasswordProtected.Name = "chkPasswordProtected";
-            this.chkPasswordProtected.Size = new System.Drawing.Size(160, 24);
+            this.chkPasswordProtected.Size = new System.Drawing.Size(163, 25);
             this.chkPasswordProtected.TabIndex = 7;
             this.chkPasswordProtected.Text = "Password Protected";
             this.chkPasswordProtected.UseVisualStyleBackColor = true;
@@ -84,6 +87,8 @@
             // 
             // btnCreateRoom
             // 
+            this.btnCreateRoom.Enabled = false;
+            this.btnCreateRoom.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCreateRoom.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCreateRoom.Location = new System.Drawing.Point(163, 555);
             this.btnCreateRoom.Margin = new System.Windows.Forms.Padding(4);
@@ -110,19 +115,24 @@
             this.txtTitle.Location = new System.Drawing.Point(283, 86);
             this.txtTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitle.Name = "txtTitle";
-            this.txtTitle.Size = new System.Drawing.Size(300, 27);
+            this.txtTitle.Size = new System.Drawing.Size(320, 27);
             this.txtTitle.TabIndex = 2;
+            this.txtTitle.TextChanged += new System.EventHandler(this.txtTitle_TextChanged);
             // 
             // txtDescription
             // 
-            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescription.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtDescription.Dock = System.Windows.Forms.DockStyle.Fill;
             this.txtDescription.EnableAutoDragDrop = true;
-            this.txtDescription.Location = new System.Drawing.Point(163, 245);
+            this.txtDescription.Location = new System.Drawing.Point(0, 0);
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
-            this.txtDescription.Size = new System.Drawing.Size(443, 110);
-            this.txtDescription.TabIndex = 6;
+            this.txtDescription.Size = new System.Drawing.Size(440, 106);
+            this.txtDescription.TabIndex = 0;
             this.txtDescription.Text = "";
+            this.txtDescription.TextChanged += new System.EventHandler(this.txtDescription_TextChanged);
+            this.txtDescription.Enter += new System.EventHandler(this.txtDescription_Enter);
+            this.txtDescription.Leave += new System.EventHandler(this.txtDescription_Leave);
             // 
             // numMaxUsers
             // 
@@ -182,6 +192,15 @@
             this.panelPassword.TabIndex = 29;
             this.panelPassword.Visible = false;
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Location = new System.Drawing.Point(416, 4);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(25, 27);
+            this.elementHost1.TabIndex = 10;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = this.usrCtrlPasswordRevealBtn1;
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -195,6 +214,7 @@
             // btnClose
             // 
             this.btnClose.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnClose.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnClose.Location = new System.Drawing.Point(162, 623);
             this.btnClose.Margin = new System.Windows.Forms.Padding(4);
@@ -205,14 +225,15 @@
             this.btnClose.UseVisualStyleBackColor = true;
             this.btnClose.Click += new System.EventHandler(this.btnCreateRoom_Click);
             // 
-            // elementHost1
+            // panel1
             // 
-            this.elementHost1.Location = new System.Drawing.Point(416, 4);
-            this.elementHost1.Name = "elementHost1";
-            this.elementHost1.Size = new System.Drawing.Size(25, 27);
-            this.elementHost1.TabIndex = 10;
-            this.elementHost1.Text = "elementHost1";
-            this.elementHost1.Child = this.usrCtrlPasswordRevealBtn1;
+            this.panel1.BackColor = System.Drawing.SystemColors.Window;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panel1.Controls.Add(this.txtDescription);
+            this.panel1.Location = new System.Drawing.Point(162, 248);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(442, 108);
+            this.panel1.TabIndex = 6;
             // 
             // CreateRoomDialog
             // 
@@ -221,6 +242,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.CancelButton = this.btnClose;
             this.ClientSize = new System.Drawing.Size(756, 697);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panelPassword);
             this.Controls.Add(this.numMaxUsers);
@@ -230,9 +252,10 @@
             this.Controls.Add(this.btnCreateRoom);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.txtTitle);
-            this.Controls.Add(this.txtDescription);
             this.Controls.Add(this.label5);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MaximizeBox = false;
@@ -245,6 +268,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.numMaxUsers)).EndInit();
             this.panelPassword.ResumeLayout(false);
             this.panelPassword.PerformLayout();
+            this.panel1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -267,5 +291,6 @@
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private usrCtrlPasswordRevealBtn usrCtrlPasswordRevealBtn1;
         private System.Windows.Forms.Button btnClose;
+        private System.Windows.Forms.Panel panel1;
     }
 }

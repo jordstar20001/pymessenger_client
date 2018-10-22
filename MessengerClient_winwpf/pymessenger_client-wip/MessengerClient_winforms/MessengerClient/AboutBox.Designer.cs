@@ -147,6 +147,7 @@
             // 
             this.okButton.DialogResult = System.Windows.Forms.DialogResult.Cancel;
             this.okButton.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.okButton.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.okButton.Location = new System.Drawing.Point(187, 265);
             this.okButton.Margin = new System.Windows.Forms.Padding(4);
             this.okButton.Name = "okButton";
@@ -185,10 +186,12 @@
             this.AcceptButton = this.okButton;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
+            this.CancelButton = this.okButton;
             this.ClientSize = new System.Drawing.Size(580, 348);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.lnkJZ);
             this.Controls.Add(this.tableLayoutPanel);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

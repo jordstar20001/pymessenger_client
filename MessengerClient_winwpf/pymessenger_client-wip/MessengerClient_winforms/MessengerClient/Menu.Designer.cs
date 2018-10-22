@@ -53,6 +53,7 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtOwner = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
+            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timeCheckForRooms = new System.Windows.Forms.Timer(this.components);
             this.txtToken = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -60,7 +61,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel1.SuspendLayout();
             this.panelSingleRoom.SuspendLayout();
@@ -70,6 +70,7 @@
             // btnLogout
             // 
             this.btnLogout.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnLogout.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnLogout.Font = new System.Drawing.Font("Sitka Heading", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLogout.Location = new System.Drawing.Point(1019, 47);
             this.btnLogout.Margin = new System.Windows.Forms.Padding(4);
@@ -84,14 +85,15 @@
             // btnCreateRoom
             // 
             this.btnCreateRoom.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnCreateRoom.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnCreateRoom.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCreateRoom.Location = new System.Drawing.Point(631, 4);
+            this.btnCreateRoom.Location = new System.Drawing.Point(620, 4);
             this.btnCreateRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnCreateRoom.Name = "btnCreateRoom";
             this.btnCreateRoom.Size = new System.Drawing.Size(143, 60);
             this.btnCreateRoom.TabIndex = 25;
             this.btnCreateRoom.Text = "+";
-            this.toolTip1.SetToolTip(this.btnCreateRoom, "Create a new room");
+            this.toolTip1.SetToolTip(this.btnCreateRoom, "Create a new room (Ctrl + N)");
             this.btnCreateRoom.UseVisualStyleBackColor = true;
             this.btnCreateRoom.Click += new System.EventHandler(this.btnCreateRoom_Click);
             // 
@@ -113,7 +115,7 @@
             this.lstUsersOnline.Location = new System.Drawing.Point(83, 129);
             this.lstUsersOnline.Margin = new System.Windows.Forms.Padding(4);
             this.lstUsersOnline.Name = "lstUsersOnline";
-            this.lstUsersOnline.Size = new System.Drawing.Size(328, 644);
+            this.lstUsersOnline.Size = new System.Drawing.Size(328, 624);
             this.lstUsersOnline.TabIndex = 4;
             // 
             // timeCheckForUsers
@@ -146,16 +148,17 @@
             this.panel1.Location = new System.Drawing.Point(481, 129);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 646);
+            this.panel1.Size = new System.Drawing.Size(773, 640);
             this.panel1.TabIndex = 8;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(13, 33);
+            this.label4.Font = new System.Drawing.Font("Modern No. 20", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(20, 14);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(121, 20);
+            this.label4.Size = new System.Drawing.Size(293, 41);
             this.label4.TabIndex = 9;
             this.label4.Text = "Rooms Available";
             // 
@@ -168,7 +171,7 @@
             this.lstRooms.Location = new System.Drawing.Point(17, 80);
             this.lstRooms.Margin = new System.Windows.Forms.Padding(4);
             this.lstRooms.Name = "lstRooms";
-            this.lstRooms.Size = new System.Drawing.Size(313, 544);
+            this.lstRooms.Size = new System.Drawing.Size(313, 524);
             this.lstRooms.TabIndex = 10;
             this.lstRooms.Click += new System.EventHandler(this.lstRooms_Click);
             this.lstRooms.SelectedIndexChanged += new System.EventHandler(this.lstRooms_SelectedIndexChanged);
@@ -195,7 +198,7 @@
             this.panelSingleRoom.Location = new System.Drawing.Point(340, 71);
             this.panelSingleRoom.Margin = new System.Windows.Forms.Padding(4);
             this.panelSingleRoom.Name = "panelSingleRoom";
-            this.panelSingleRoom.Size = new System.Drawing.Size(433, 571);
+            this.panelSingleRoom.Size = new System.Drawing.Size(422, 565);
             this.panelSingleRoom.TabIndex = 11;
             this.panelSingleRoom.Visible = false;
             // 
@@ -253,7 +256,7 @@
             this.lstRoomUsers.Location = new System.Drawing.Point(20, 160);
             this.lstRoomUsers.Margin = new System.Windows.Forms.Padding(4);
             this.lstRoomUsers.Name = "lstRoomUsers";
-            this.lstRoomUsers.Size = new System.Drawing.Size(388, 124);
+            this.lstRoomUsers.Size = new System.Drawing.Size(377, 124);
             this.lstRoomUsers.TabIndex = 18;
             this.lstRoomUsers.SelectedIndexChanged += new System.EventHandler(this.lstRoomUsers_SelectedIndexChanged);
             // 
@@ -264,10 +267,11 @@
             this.chkPasswordProtected.AutoSize = true;
             this.chkPasswordProtected.CheckAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.chkPasswordProtected.Enabled = false;
+            this.chkPasswordProtected.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.chkPasswordProtected.Location = new System.Drawing.Point(163, 452);
             this.chkPasswordProtected.Margin = new System.Windows.Forms.Padding(4);
             this.chkPasswordProtected.Name = "chkPasswordProtected";
-            this.chkPasswordProtected.Size = new System.Drawing.Size(160, 24);
+            this.chkPasswordProtected.Size = new System.Drawing.Size(163, 25);
             this.chkPasswordProtected.TabIndex = 21;
             this.chkPasswordProtected.Text = "Password Protected";
             this.chkPasswordProtected.UseVisualStyleBackColor = true;
@@ -286,11 +290,12 @@
             // 
             this.btnJoinRoom.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnJoinRoom.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnJoinRoom.Font = new System.Drawing.Font("Sitka Heading", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnJoinRoom.Location = new System.Drawing.Point(20, 496);
             this.btnJoinRoom.Margin = new System.Windows.Forms.Padding(4);
             this.btnJoinRoom.Name = "btnJoinRoom";
-            this.btnJoinRoom.Size = new System.Drawing.Size(389, 60);
+            this.btnJoinRoom.Size = new System.Drawing.Size(378, 60);
             this.btnJoinRoom.TabIndex = 24;
             this.btnJoinRoom.Text = "Join Room";
             this.btnJoinRoom.UseVisualStyleBackColor = true;
@@ -324,7 +329,7 @@
             this.txtTitle.Margin = new System.Windows.Forms.Padding(4);
             this.txtTitle.Name = "txtTitle";
             this.txtTitle.ReadOnly = true;
-            this.txtTitle.Size = new System.Drawing.Size(323, 27);
+            this.txtTitle.Size = new System.Drawing.Size(312, 27);
             this.txtTitle.TabIndex = 13;
             // 
             // txtOwner
@@ -335,7 +340,7 @@
             this.txtOwner.Margin = new System.Windows.Forms.Padding(4);
             this.txtOwner.Name = "txtOwner";
             this.txtOwner.ReadOnly = true;
-            this.txtOwner.Size = new System.Drawing.Size(323, 27);
+            this.txtOwner.Size = new System.Drawing.Size(312, 27);
             this.txtOwner.TabIndex = 15;
             this.txtOwner.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
@@ -348,9 +353,23 @@
             this.txtDescription.Margin = new System.Windows.Forms.Padding(4);
             this.txtDescription.Name = "txtDescription";
             this.txtDescription.ReadOnly = true;
-            this.txtDescription.Size = new System.Drawing.Size(388, 110);
+            this.txtDescription.Size = new System.Drawing.Size(377, 110);
             this.txtDescription.TabIndex = 20;
             this.txtDescription.Text = "";
+            // 
+            // richTextBox1
+            // 
+            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.richTextBox1.Location = new System.Drawing.Point(361, 392);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.richTextBox1.Name = "richTextBox1";
+            this.richTextBox1.ReadOnly = true;
+            this.richTextBox1.Size = new System.Drawing.Size(377, 104);
+            this.richTextBox1.TabIndex = 20;
+            this.richTextBox1.Text = "";
             // 
             // timeCheckForRooms
             // 
@@ -386,17 +405,19 @@
             this.label7.Size = new System.Drawing.Size(198, 45);
             this.label7.TabIndex = 0;
             this.label7.Text = "jMessages";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // label8
             // 
             this.label8.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(199, 70);
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(83, 60);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(91, 20);
+            this.label8.Size = new System.Drawing.Size(328, 30);
             this.label8.TabIndex = 1;
             this.label8.Text = "Online Users";
+            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // linkLabel1
             // 
@@ -410,20 +431,6 @@
             this.linkLabel1.Text = "About";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(361, 392);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(388, 110);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Image = global::MessengerClient.Properties.Resources.icon1;
@@ -433,6 +440,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 27;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // Menu
             // 
@@ -451,15 +459,19 @@
             this.Controls.Add(this.lstUsersOnline);
             this.Controls.Add(this.txtSearch);
             this.Controls.Add(this.btnLogout);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.KeyPreview = true;
             this.Margin = new System.Windows.Forms.Padding(4);
             this.MinimumSize = new System.Drawing.Size(1000, 400);
             this.Name = "Menu";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "jMessages";
             this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.Menu_FormClosing);
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.Menu_FormClosed);
             this.Load += new System.EventHandler(this.Menu_Load);
+            this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.Menu_KeyDown);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panelSingleRoom.ResumeLayout(false);

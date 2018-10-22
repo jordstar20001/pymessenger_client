@@ -58,6 +58,7 @@
             this.ClientSize = new System.Drawing.Size(800, 478);
             this.ControlBox = false;
             this.Controls.Add(this.elementHost1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Modern No. 20", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.Color.Black;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;

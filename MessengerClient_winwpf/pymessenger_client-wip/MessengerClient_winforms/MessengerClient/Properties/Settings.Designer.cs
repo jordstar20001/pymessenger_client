@@ -58,5 +58,17 @@ namespace MessengerClient.Properties {
                 this["LastUserName"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool useEncryption {
+            get {
+                return ((bool)(this["useEncryption"]));
+            }
+            set {
+                this["useEncryption"] = value;
+            }
+        }
     }
 }

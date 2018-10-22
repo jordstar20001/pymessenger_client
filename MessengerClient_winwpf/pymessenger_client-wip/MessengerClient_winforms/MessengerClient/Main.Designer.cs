@@ -45,6 +45,7 @@
             // 
             // btnOpen
             // 
+            this.btnOpen.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.btnOpen.Location = new System.Drawing.Point(287, 221);
             this.btnOpen.Margin = new System.Windows.Forms.Padding(4);
             this.btnOpen.Name = "btnOpen";
@@ -97,10 +98,11 @@
             // chkEncryption
             // 
             this.chkEncryption.AutoSize = true;
+            this.chkEncryption.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.chkEncryption.Location = new System.Drawing.Point(208, 154);
             this.chkEncryption.Margin = new System.Windows.Forms.Padding(4);
             this.chkEncryption.Name = "chkEncryption";
-            this.chkEncryption.Size = new System.Drawing.Size(159, 24);
+            this.chkEncryption.Size = new System.Drawing.Size(162, 25);
             this.chkEncryption.TabIndex = 5;
             this.chkEncryption.Text = "Encryption enabled";
             this.chkEncryption.UseVisualStyleBackColor = true;
@@ -167,6 +169,7 @@
             this.ClientSize = new System.Drawing.Size(684, 319);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressBar1);
+            this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

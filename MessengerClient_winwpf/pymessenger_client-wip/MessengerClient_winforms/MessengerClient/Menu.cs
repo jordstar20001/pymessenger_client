@@ -241,7 +241,7 @@ namespace MessengerClient
                     else
                     {
                         var error = (await Helpers.Deserialised<FromAPI.ErrorMessageContainer>(response)).message;
-                        MessageBox.Show(string.Format("Error. {0}", error));
+                        MessageBox.Show(string.Format("Error. {0}", error), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
                         
                     }
 
@@ -275,7 +275,7 @@ namespace MessengerClient
                 else
                 {
                     var error = (await Helpers.Deserialised<FromAPI.ErrorMessageContainer>(response)).message;
-                    MessageBox.Show(string.Format("Error. {0}", error));
+                    MessageBox.Show(string.Format("Error. {0}", error), Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
 
                 }
             }
@@ -323,6 +323,28 @@ namespace MessengerClient
                 {
                     lstUsersOnline.Items.Add(user);
                 }
+            }
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            AboutBox aboutBox = new AboutBox();
+            aboutBox.ShowDialog();
+        }
+
+        private void Menu_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.N) {
+                if (System.Windows.Input.Keyboard.IsKeyDown(System.Windows.Input.Key.LeftCtrl) || System.Windows.Input.Keyboard.IsKeyDown(System.Windows.Input.Key.RightCtrl)) {
+                    btnCreateRoom_Click(null, null);
+                }
+
             }
         }
     }

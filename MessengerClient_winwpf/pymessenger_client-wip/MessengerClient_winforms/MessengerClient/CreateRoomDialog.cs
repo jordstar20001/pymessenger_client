@@ -28,6 +28,7 @@ namespace MessengerClient
             usrCtrlPasswordRevealBtn1.btnRevealPassword.PreviewMouseUp += UsrCtrlPasswordRevealBtn1_MouseUp;
             usrCtrlPasswordRevealBtn1.btnRevealPassword.PreviewKeyUp += UsrCtrlPasswordRevealBtn2_KeyDown;
             usrCtrlPasswordRevealBtn1.btnRevealPassword.PreviewKeyDown += BtnRevealPassword_PreviewKeyDown;
+            validateInput();
         }
 
 
@@ -98,6 +99,38 @@ namespace MessengerClient
         private void chkViewPassword_CheckedChanged(object sender, EventArgs e)
         {
             txtPassword.UseSystemPasswordChar = !chkViewPassword.Checked;
+        }
+
+        private void txtTitle_TextChanged(object sender, EventArgs e)
+        {
+            validateInput();
+        }
+
+        private void validateInput()
+        {
+            if (txtTitle.Text == "" || txtDescription.Text == "")
+            {
+                btnCreateRoom.Enabled = false;
+            }
+            else
+            {
+                btnCreateRoom.Enabled = true;
+            }
+        }
+
+        private void txtDescription_TextChanged(object sender, EventArgs e)
+        {
+            validateInput();
+        }
+
+        private void txtDescription_Enter(object sender, EventArgs e)
+        {
+            AcceptButton = null;
+        }
+
+        private void txtDescription_Leave(object sender, EventArgs e)
+        {
+            AcceptButton = btnCreateRoom;
         }
     }
 }

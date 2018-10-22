@@ -80,6 +80,7 @@ namespace MessengerClient
             iconMenuItemExit.Click += IconMenuItemExit_Click;
             txtAddress.Text = Properties.Settings.Default.messageServer;
             txtPort.Value = Properties.Settings.Default.messageServerPort;
+            chkEncryption.Checked = Properties.Settings.Default.useEncryption;
             
         }
 
@@ -137,6 +138,8 @@ namespace MessengerClient
                         userForm.Show();
                         Properties.Settings.Default.messageServer = txtAddress.Text;
                         Properties.Settings.Default.messageServerPort = txtPort.Value;
+                        Properties.Settings.Default.useEncryption = chkEncryption.Checked;
+
                         this.Hide();
                         //this.Close();
                     }
