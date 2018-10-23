@@ -62,6 +62,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.lnkSettings = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             this.panelSingleRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -440,12 +441,24 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // lnkSettings
+            // 
+            this.lnkSettings.AutoSize = true;
+            this.lnkSettings.Location = new System.Drawing.Point(3, 733);
+            this.lnkSettings.Name = "lnkSettings";
+            this.lnkSettings.Size = new System.Drawing.Size(62, 20);
+            this.lnkSettings.TabIndex = 28;
+            this.lnkSettings.TabStop = true;
+            this.lnkSettings.Text = "Settings";
+            this.lnkSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSettings_LinkClicked);
+            // 
             // Menu
             // 
             this.AcceptButton = this.btnJoinRoom;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1267, 782);
+            this.Controls.Add(this.lnkSettings);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabel1);
             this.Controls.Add(this.label8);
@@ -514,5 +527,6 @@
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.LinkLabel lnkSettings;
     }
 }

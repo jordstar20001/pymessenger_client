@@ -155,7 +155,7 @@ namespace MessengerClient
                         userForm = new UserAccountManagement();
                         userForm.Show();
                         Properties.Settings.Default.messageServer = txtAddress.Text;
-                        Properties.Settings.Default.messageServerPort = txtPort.Value;
+                        Properties.Settings.Default.messageServerPort = (int)txtPort.Value;
                         Properties.Settings.Default.useEncryption = chkEncryption.Checked;
 
                         this.Hide();
@@ -220,6 +220,12 @@ namespace MessengerClient
         {
             AboutBox aboutBox = new AboutBox();
             aboutBox.ShowDialog();
+        }
+
+        private void lnkSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmSettings frmSettings = new frmSettings();
+            frmSettings.ShowDialog();
         }
     }
 

@@ -347,5 +347,11 @@ namespace MessengerClient
 
             }
         }
+
+        private void lnkSettings_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            frmSettings frmSettings = new frmSettings();
+            frmSettings.ShowDialog();
+        }
     }
 }

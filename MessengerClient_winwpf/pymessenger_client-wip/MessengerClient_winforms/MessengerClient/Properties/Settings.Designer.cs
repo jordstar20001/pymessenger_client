@@ -38,9 +38,9 @@ namespace MessengerClient.Properties {
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("21")]
-        public decimal messageServerPort {
+        public int messageServerPort {
             get {
-                return ((decimal)(this["messageServerPort"]));
+                return ((int)(this["messageServerPort"]));
             }
             set {
                 this["messageServerPort"] = value;
@@ -49,7 +49,7 @@ namespace MessengerClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("0")]
+        [global::System.Configuration.DefaultSettingValueAttribute("")]
         public string LastUserName {
             get {
                 return ((string)(this["LastUserName"]));
@@ -68,6 +68,18 @@ namespace MessengerClient.Properties {
             }
             set {
                 this["useEncryption"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool spellCheckEabled {
+            get {
+                return ((bool)(this["spellCheckEabled"]));
+            }
+            set {
+                this["spellCheckEabled"] = value;
             }
         }
     }

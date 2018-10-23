@@ -39,6 +39,7 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtPort = new System.Windows.Forms.NumericUpDown();
+            this.lnkSettings = new System.Windows.Forms.LinkLabel();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPort)).BeginInit();
             this.SuspendLayout();
@@ -118,6 +119,7 @@
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.lnkSettings);
             this.panel1.Controls.Add(this.linkLabel1);
             this.panel1.Controls.Add(this.txtPort);
             this.panel1.Controls.Add(this.label2);
@@ -161,6 +163,17 @@
             0,
             0});
             // 
+            // lnkSettings
+            // 
+            this.lnkSettings.AutoSize = true;
+            this.lnkSettings.Location = new System.Drawing.Point(13, 13);
+            this.lnkSettings.Name = "lnkSettings";
+            this.lnkSettings.Size = new System.Drawing.Size(62, 20);
+            this.lnkSettings.TabIndex = 8;
+            this.lnkSettings.TabStop = true;
+            this.lnkSettings.Text = "Settings";
+            this.lnkSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSettings_LinkClicked);
+            // 
             // Main
             // 
             this.AcceptButton = this.btnOpen;
@@ -200,6 +213,7 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.NumericUpDown txtPort;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel lnkSettings;
     }
 }
 

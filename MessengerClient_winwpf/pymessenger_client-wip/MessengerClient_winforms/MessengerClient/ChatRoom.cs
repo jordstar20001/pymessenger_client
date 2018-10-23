@@ -272,6 +272,8 @@ namespace MessengerClient
             usrCtrlMessage1.sldrOpacity.ValueChanged += SldrOpacity_ValueChanged;
             usrCtrlMessage1.menuItemKick.Click += MenuItemCopy_Click;
             usrCtrlMessage1.chkboxTopmost.Click += ChkboxTopmost_Click;
+            usrCtrlMessage1.chkboxNotifications.IsChecked = Properties.Settings.Default.spellCheckEabled;
+            usrCtrlMessage1.txtMessage.SpellCheck.IsEnabled = Properties.Settings.Default.spellCheckEabled;
             timeGetData.Enabled = true;
         }
 

@@ -92,3 +92,6 @@ C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winw
 C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winwpf\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.csproj.CopyComplete
 C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winwpf\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.exe
 C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winwpf\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.pdb
+C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winwpf\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlSettings.g.cs
+C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winwpf\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\usrCtrlSettings.baml
+C:\Users\Aiden\OneDrive\Documents\GitHub\pymessenger_client\MessengerClient_winwpf\pymessenger_client-wip\MessengerClient_winforms\MessengerClient\obj\Debug\MessengerClient.frmSettings.resources

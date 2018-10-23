@@ -5,13 +5,16 @@
     <Setting Name="messageServer" Type="System.String" Scope="User">
       <Value Profile="(Default)">jz-software.pw</Value>
     </Setting>
-    <Setting Name="messageServerPort" Type="System.Decimal" Scope="User">
+    <Setting Name="messageServerPort" Type="System.Int32" Scope="User">
       <Value Profile="(Default)">21</Value>
     </Setting>
     <Setting Name="LastUserName" Type="System.String" Scope="User">
-      <Value Profile="(Default)">0</Value>
+      <Value Profile="(Default)" />
     </Setting>
     <Setting Name="useEncryption" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+    <Setting Name="spellCheckEabled" Type="System.Boolean" Scope="User">
       <Value Profile="(Default)">True</Value>
     </Setting>
   </Settings>
