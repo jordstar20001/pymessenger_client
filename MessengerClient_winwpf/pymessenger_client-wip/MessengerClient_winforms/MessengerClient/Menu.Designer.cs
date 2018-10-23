@@ -53,7 +53,6 @@
             this.txtTitle = new System.Windows.Forms.TextBox();
             this.txtOwner = new System.Windows.Forms.TextBox();
             this.txtDescription = new System.Windows.Forms.RichTextBox();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
             this.timeCheckForRooms = new System.Windows.Forms.Timer(this.components);
             this.txtToken = new System.Windows.Forms.TextBox();
             this.txtUsername = new System.Windows.Forms.TextBox();
@@ -63,6 +62,8 @@
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.lnkSettings = new System.Windows.Forms.LinkLabel();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
+            this.usrCtrlSplash1 = new MessengerClient.usrCtrlSplash();
             this.panel1.SuspendLayout();
             this.panelSingleRoom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -145,7 +146,6 @@
             this.panel1.Controls.Add(this.lstRooms);
             this.panel1.Controls.Add(this.panelSingleRoom);
             this.panel1.Controls.Add(this.btnCreateRoom);
-            this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Location = new System.Drawing.Point(481, 129);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
@@ -358,20 +358,6 @@
             this.txtDescription.TabIndex = 20;
             this.txtDescription.Text = "";
             // 
-            // richTextBox1
-            // 
-            this.richTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.richTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.richTextBox1.Location = new System.Drawing.Point(361, 392);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.ReadOnly = true;
-            this.richTextBox1.Size = new System.Drawing.Size(377, 104);
-            this.richTextBox1.TabIndex = 20;
-            this.richTextBox1.Text = "";
-            // 
             // timeCheckForRooms
             // 
             this.timeCheckForRooms.Interval = 2000;
@@ -452,12 +438,23 @@
             this.lnkSettings.Text = "Settings";
             this.lnkSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSettings_LinkClicked);
             // 
+            // elementHost1
+            // 
+            this.elementHost1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(1267, 782);
+            this.elementHost1.TabIndex = 29;
+            this.elementHost1.Text = "elmntHstSplash";
+            this.elementHost1.Child = this.usrCtrlSplash1;
+            // 
             // Menu
             // 
             this.AcceptButton = this.btnJoinRoom;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(1267, 782);
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.lnkSettings);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.linkLabel1);
@@ -525,8 +522,9 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.LinkLabel linkLabel1;
-        private System.Windows.Forms.RichTextBox richTextBox1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.LinkLabel lnkSettings;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
+        private usrCtrlSplash usrCtrlSplash1;
     }
 }

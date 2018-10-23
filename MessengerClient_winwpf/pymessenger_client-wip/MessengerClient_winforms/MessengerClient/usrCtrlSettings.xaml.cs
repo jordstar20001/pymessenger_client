@@ -60,10 +60,14 @@ namespace MessengerClient
         private void UserControl_Loaded(object sender, RoutedEventArgs e)
         {
             
+                System.Windows.Interop.HwndSource WindowSource = (System.Windows.Interop.HwndSource)PresentationSource.FromVisual(this);
+                WindowSource.AddHook(WndProc);
+            
             propertyGrdMySettings.SelectedObject = Properties.Settings.Default;
             chkboxSpellCheck.IsChecked = Properties.Settings.Default.spellCheckEabled;
             txtAddress.Text = Properties.Settings.Default.messageServer;
             numUpDownPort.Text = Properties.Settings.Default.messageServerPort.ToString();
+            chkboxEncryption.IsChecked = Properties.Settings.Default.useEncryption;
             Properties.Settings.Default.PropertyChanged += Default_PropertyChanged;
             System.Windows.Media.Animation.Storyboard strybrdFadeIn = (System.Windows.Media.Animation.Storyboard)FindResource("strybrdFadeIn");
             strybrdFadeIn.Begin();
@@ -110,12 +114,112 @@ namespace MessengerClient
 
         private void numUpDownPort_ValueChanged(object sender, EventArgs e)
         {
-            Properties.Settings.Default.messageServerPort = int.Parse(numUpDownPort.Text);
+            Properties.Settings.Default.messageServerPort = (int)numUpDownPort.Value;
         }
 
         private void Storyboard_Completed(object sender, EventArgs e)
         {
             UserControl_Loaded(null, null);
+        }
+
+        private void chkboxEncryption_Click(object sender, RoutedEventArgs e)
+        {
+            Properties.Settings.Default.useEncryption = (bool)chkboxEncryption.IsChecked;
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+
+            // Console.WriteLine(msg)
+            // If msg = &H11 Then
+            // MsgBox("Tst")
+            // End If
+            if (msg == 526)
+            {
+            }
+            try
+            {
+                if (msg == 526)
+                {
+                    try
+                    {
+                        if (wParam.ToInt32() > 0)
+                        {
+                            try
+                            {
+                                //MessageBox.Show(Mouse.DirectlyOver.ToString());
+                                DependencyObject Element = (DependencyObject)Mouse.DirectlyOver;
+                                ScrollContentPresenter ElementScrPresenter = (ScrollContentPresenter)VisualTreeHelper.GetParent(Element);
+                                Grid ElementScrPresenterGrd = (Grid)VisualTreeHelper.GetParent(ElementScrPresenter);
+                                ScrollViewer ElementParent = (ScrollViewer)VisualTreeHelper.GetParent(ElementScrPresenterGrd);
+                                try
+                                {
+                                    if (ElementParent.HorizontalOffset == ElementParent.ScrollableWidth)
+                                    {
+                                    }
+                                }
+                                catch
+                                {
+                                }
+                                ElementParent.ScrollToHorizontalOffset(ElementParent.HorizontalOffset + System.Windows.Forms.SystemInformation.MouseWheelScrollLines * 10);
+                            }
+                            catch
+                            {
+                            }
+                        }
+                        else if (wParam.ToInt32() < 0)
+                        {
+                            try
+                            {
+                                DependencyObject Element = (DependencyObject)Mouse.DirectlyOver;
+                                ScrollContentPresenter ElementScrPresenter = (ScrollContentPresenter)VisualTreeHelper.GetParent(Element);
+                                Grid ElementScrPresenterGrd = (Grid)VisualTreeHelper.GetParent(ElementScrPresenter);
+                                ScrollViewer ElementParent = (ScrollViewer)VisualTreeHelper.GetParent(ElementScrPresenterGrd);
+                                try
+                                {
+                                    if (ElementParent.HorizontalOffset == 0)
+                                    {
+                                    }
+                                }
+                                catch
+                                {
+                                }
+                                ElementParent.ScrollToHorizontalOffset(ElementParent.HorizontalOffset - System.Windows.Forms.SystemInformation.MouseWheelScrollLines * 10);
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                    catch (ArithmeticException ex)
+                    {
+                        try
+                        {
+                            DependencyObject Element = (DependencyObject)Mouse.DirectlyOver;
+                            ScrollContentPresenter ElementScrPresenter = (ScrollContentPresenter)VisualTreeHelper.GetParent(Element);
+                            Grid ElementScrPresenterGrd = (Grid)VisualTreeHelper.GetParent(ElementScrPresenter);
+                            ScrollViewer ElementParent = (ScrollViewer)VisualTreeHelper.GetParent(ElementScrPresenterGrd);
+                            try
+                            {
+                                if (ElementParent.HorizontalOffset == 0)
+                                {
+                                }
+                            }
+                            catch
+                            {
+                            }
+                            ElementParent.ScrollToHorizontalOffset(ElementParent.HorizontalOffset - System.Windows.Forms.SystemInformation.MouseWheelScrollLines * 10);
+                        }
+                        catch
+                        {
+                        }
+                    }
+                }
+            }
+            catch
+            {
+            }
+            return IntPtr.Zero;
         }
     }
 }

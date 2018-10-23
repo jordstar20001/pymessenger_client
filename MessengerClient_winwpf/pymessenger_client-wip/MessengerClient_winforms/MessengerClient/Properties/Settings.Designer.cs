@@ -37,7 +37,7 @@ namespace MessengerClient.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("21")]
+        [global::System.Configuration.DefaultSettingValueAttribute("8080")]
         public int messageServerPort {
             get {
                 return ((int)(this["messageServerPort"]));

@@ -34,7 +34,7 @@
             <DockPanel VerticalAlignment="Top">
                 <Button x:Name="btnApply" Click="btnApply_Click" Content="Apply" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="5" DockPanel.Dock="Right" Height="20" FontSize="12" TabIndex="3" IsEnabled="False"/>
                 <Button x:Name="btnCancel" Content="Cancel" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="5" IsCancel="True" Click="btnCancel_Click" DockPanel.Dock="Right" Height="20" FontSize="12" TabIndex="2"/>
-                <Button x:Name="btnOk" Click="btnApply_Click" Content="OK" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="5" IsCancel="True" IsDefault="True" DockPanel.Dock="Right" Height="20" FontSize="12" TabIndex="1"/>
+                <Button x:Name="btnOk" Click="btnApply_Click" Content="OK" HorizontalAlignment="Right" VerticalAlignment="Top" Width="70" Margin="5" IsDefault="True" DockPanel.Dock="Right" Height="20" FontSize="12" TabIndex="1"/>
                 <Button x:Name="btnDefaults" Click="btnDefaults_Click" Content="Defaults" HorizontalAlignment="Left" VerticalAlignment="Top" Width="70" Margin="5" Height="20" FontSize="12" TabIndex="4"/>
                 <TextBlock HorizontalAlignment="Left" TextWrapping="Wrap" VerticalAlignment="Center" FontSize="12" Margin="5">
                     <Hyperlink x:Name="lnkAbout" Click="lnkAbout_Click">About</Hyperlink>
@@ -56,6 +56,7 @@
                                     <Forms:NumericUpDown x:Name="numUpDownPort" Maximum="65535" ValueChanged="numUpDownPort_ValueChanged"/>
                                 </WindowsFormsHost>
                             </StackPanel>
+                            <CheckBox x:Name="chkboxEncryption" Content="Use encryption" Margin="15,5,5,5" VerticalContentAlignment="Center" Click="chkboxEncryption_Click"/>
                         </StackPanel>
                     </ScrollViewer>
                 </Grid>
@@ -78,6 +79,7 @@
                 </Grid>
             </TabItem>
         </TabControl>
+        <Frame Grid.RowSpan="2" Source="/MessengerClient;component/usrCtrlSplash.xaml"/>
 
     </Grid>
 </UserControl>

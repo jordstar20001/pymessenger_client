@@ -96,7 +96,6 @@
         </EventTrigger>
         <EventTrigger RoutedEvent="FrameworkElement.Loaded">
             <BeginStoryboard x:Name="btnSendClick_BeginStoryboard1" Storyboard="{StaticResource btnSendClick}"/>
-            <BeginStoryboard Storyboard="{StaticResource strybrdLoad}"/>
         </EventTrigger>
         <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnInfoHide">
             <BeginStoryboard x:Name="strybrdHidenfo_BeginStoryboard" Storyboard="{StaticResource strybrdHidenfo}"/>
@@ -211,5 +210,6 @@
             <CheckBox x:Name="chkboxTopmost" Content="Keep window on top" VerticalAlignment="Bottom" Margin="10,0,10,118.6" FontSize="14"/>
             <CheckBox x:Name="chkboxSpellCheck" Content="Enable spellcheck" VerticalAlignment="Bottom" Margin="10,0,10,82.6" FontSize="14" IsChecked="True" Click="chkboxSpellCheck_Click"/>
         </Grid>
+        <Frame x:Name="frmSplash" Source="/MessengerClient;component/usrCtrlSplash.xaml"/>
     </Grid>
 </UserControl>

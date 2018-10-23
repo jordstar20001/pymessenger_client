@@ -38,6 +38,8 @@ namespace MessengerClient
 
         System.Windows.Window window = new System.Windows.Window();
 
+        usrCtrlSplash usrCtrlSplash1 = new usrCtrlSplash();
+
         public Main()
         {
             InitializeComponent();
@@ -60,6 +62,7 @@ namespace MessengerClient
                 Interval = 7000
             };
             tmrMain.Tick += TmrMain_Tick;
+            usrCtrlSplash1.IsVisibleChanged += UsrCtrlSplash1_IsVisibleChanged;
             System.Windows.Controls.Frame frame = new System.Windows.Controls.Frame();
             window.Content = frame;
             frame.Navigate(new Splash());
@@ -87,6 +90,14 @@ namespace MessengerClient
             txtPort.Value = Properties.Settings.Default.messageServerPort;
             chkEncryption.Checked = Properties.Settings.Default.useEncryption;
             
+        }
+
+        private void UsrCtrlSplash1_IsVisibleChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+        {
+            if (usrCtrlSplash1.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                elementHost1.Hide();
+            }
         }
 
         private void IconMenuItemAbout_Click(object sender, System.Windows.RoutedEventArgs e)
@@ -118,6 +129,7 @@ namespace MessengerClient
         private void TmrMain_Tick(object sender, EventArgs e)
         {
             window.Close();
+            elementHost1.Child = usrCtrlSplash1;
             this.Opacity = 1;
         }
 
@@ -226,6 +238,9 @@ namespace MessengerClient
         {
             frmSettings frmSettings = new frmSettings();
             frmSettings.ShowDialog();
+            txtAddress.Text = Properties.Settings.Default.messageServer;
+            txtPort.Value = Properties.Settings.Default.messageServerPort;
+            chkEncryption.Checked = Properties.Settings.Default.useEncryption;
         }
     }
 

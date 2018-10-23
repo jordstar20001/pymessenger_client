@@ -68,16 +68,26 @@ namespace MessengerClient
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            timeCheckForUsers.Enabled = true;
+            timeCheckForRooms.Enabled = true;
             var asForm = System.Windows.Automation.AutomationElement.FromHandle(this.Handle);
             lstUsersOnline.Font = SystemFonts.MessageBoxFont;
             txtDescription.Font = SystemFonts.MessageBoxFont;
             lstRoomUsers.Font = SystemFonts.MessageBoxFont;
-            timeCheckForUsers.Enabled = true;
-            timeCheckForRooms.Enabled = true;
+            usrCtrlSplash1.IsVisibleChanged += UsrCtrlSplash1_IsVisibleChanged;
+
 
             txtToken.Text = Main.UserToken;
             txtUsername.Text = Main.Username;
 
+        }
+
+        private void UsrCtrlSplash1_IsVisibleChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+        {
+            if (usrCtrlSplash1.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                elementHost1.Hide();
+            }
         }
 
         private void Menu_FormClosing(object sender, FormClosingEventArgs e)

@@ -37,9 +37,10 @@
             this.chkEncryption = new System.Windows.Forms.CheckBox();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lnkSettings = new System.Windows.Forms.LinkLabel();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.txtPort = new System.Windows.Forms.NumericUpDown();
-            this.lnkSettings = new System.Windows.Forms.LinkLabel();
+            this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.txtPort)).BeginInit();
             this.SuspendLayout();
@@ -134,6 +135,17 @@
             this.panel1.Size = new System.Drawing.Size(684, 287);
             this.panel1.TabIndex = 8;
             // 
+            // lnkSettings
+            // 
+            this.lnkSettings.AutoSize = true;
+            this.lnkSettings.Location = new System.Drawing.Point(13, 13);
+            this.lnkSettings.Name = "lnkSettings";
+            this.lnkSettings.Size = new System.Drawing.Size(62, 20);
+            this.lnkSettings.TabIndex = 8;
+            this.lnkSettings.TabStop = true;
+            this.lnkSettings.Text = "Settings";
+            this.lnkSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSettings_LinkClicked);
+            // 
             // linkLabel1
             // 
             this.linkLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -163,16 +175,18 @@
             0,
             0});
             // 
-            // lnkSettings
+            // elementHost1
             // 
-            this.lnkSettings.AutoSize = true;
-            this.lnkSettings.Location = new System.Drawing.Point(13, 13);
-            this.lnkSettings.Name = "lnkSettings";
-            this.lnkSettings.Size = new System.Drawing.Size(62, 20);
-            this.lnkSettings.TabIndex = 8;
-            this.lnkSettings.TabStop = true;
-            this.lnkSettings.Text = "Settings";
-            this.lnkSettings.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.lnkSettings_LinkClicked);
+            this.elementHost1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.elementHost1.BackColorTransparent = true;
+            this.elementHost1.Location = new System.Drawing.Point(0, 0);
+            this.elementHost1.Name = "elementHost1";
+            this.elementHost1.Size = new System.Drawing.Size(684, 320);
+            this.elementHost1.TabIndex = 9;
+            this.elementHost1.Text = "elementHost1";
+            this.elementHost1.Child = null;
             // 
             // Main
             // 
@@ -180,6 +194,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(684, 319);
+            this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.progressBar1);
             this.DoubleBuffered = true;
@@ -214,6 +229,7 @@
         private System.Windows.Forms.NumericUpDown txtPort;
         private System.Windows.Forms.LinkLabel linkLabel1;
         private System.Windows.Forms.LinkLabel lnkSettings;
+        private System.Windows.Forms.Integration.ElementHost elementHost1;
     }
 }
 

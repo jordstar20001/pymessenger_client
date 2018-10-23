@@ -40,11 +40,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.txtSignupPassword = new System.Windows.Forms.TextBox();
             this.txtSignupUsername = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.LinkLabel();
             this.btnSignup = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
             this.elementHost1 = new System.Windows.Forms.Integration.ElementHost();
             this.usrCtrlPasswordRevealBtn2 = new MessengerClient.usrCtrlPasswordRevealBtn();
+            this.elementHost2 = new System.Windows.Forms.Integration.ElementHost();
+            this.usrCtrlSplash1 = new MessengerClient.usrCtrlSplash();
             ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
             this.splitContainer1.Panel2.SuspendLayout();
             this.splitContainer1.SuspendLayout();
@@ -186,8 +188,10 @@
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(485, 29);
             this.label1.TabIndex = 2;
+            this.label1.TabStop = true;
             this.label1.Text = "Sign In";
             this.label1.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.label1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.label1_LinkClicked);
             // 
             // btnSignup
             // 
@@ -225,12 +229,23 @@
             this.elementHost1.Text = "elementHost1";
             this.elementHost1.Child = this.usrCtrlPasswordRevealBtn2;
             // 
+            // elementHost2
+            // 
+            this.elementHost2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.elementHost2.Location = new System.Drawing.Point(0, 0);
+            this.elementHost2.Name = "elementHost2";
+            this.elementHost2.Size = new System.Drawing.Size(561, 576);
+            this.elementHost2.TabIndex = 9;
+            this.elementHost2.Text = "elementHost2";
+            this.elementHost2.Child = this.usrCtrlSplash1;
+            // 
             // UserAccountManagement
             // 
             this.AcceptButton = this.btnLogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(120F, 120F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Dpi;
             this.ClientSize = new System.Drawing.Size(561, 576);
+            this.Controls.Add(this.elementHost2);
             this.Controls.Add(this.elementHost1);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label5);
@@ -271,7 +286,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox txtSignupPassword;
         private System.Windows.Forms.TextBox txtSignupUsername;
-        private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label2;
@@ -280,5 +294,8 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Integration.ElementHost elementHost1;
         private usrCtrlPasswordRevealBtn usrCtrlPasswordRevealBtn2;
+        private System.Windows.Forms.LinkLabel label1;
+        private System.Windows.Forms.Integration.ElementHost elementHost2;
+        private usrCtrlSplash usrCtrlSplash1;
     }
 }

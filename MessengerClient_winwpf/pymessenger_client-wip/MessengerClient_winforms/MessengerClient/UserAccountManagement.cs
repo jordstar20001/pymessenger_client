@@ -175,8 +175,17 @@ namespace MessengerClient
 
              
             }
+            usrCtrlSplash1.IsVisibleChanged += UsrCtrlSplash1_IsVisibleChanged;
 
             //elementHost1.Child = usrCtrlPasswordRevealBtn1;
+        }
+
+        private void UsrCtrlSplash1_IsVisibleChanged(object sender, System.Windows.DependencyPropertyChangedEventArgs e)
+        {
+            if (usrCtrlSplash1.Visibility == System.Windows.Visibility.Collapsed)
+            {
+                elementHost2.Hide();
+            }
         }
 
         private void BtnRevealPassword_PreviewKeyDown(object sender, System.Windows.Input.KeyEventArgs e)
@@ -214,6 +223,18 @@ namespace MessengerClient
         private void splitContainer1_Panel2_Enter(object sender, EventArgs e)
         {
             //this.AcceptButton = btnLogin;
+        }
+
+        private void label1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            try
+            {
+                System.Diagnostics.Process.Start(label1.Text);
+            }
+            catch (Exception)
+            {
+
+            }
         }
     }
 
