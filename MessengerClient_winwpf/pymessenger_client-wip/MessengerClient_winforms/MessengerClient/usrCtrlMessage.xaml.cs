@@ -18,12 +18,16 @@ namespace MessengerClient
     /// <summary>
     /// Interaction logic for usrCtrlMessage.xaml
     /// </summary>
+    /// 
+
     public partial class usrCtrlMessage : UserControl
+
     {
         public usrCtrlMessage()
         {
             InitializeComponent();
         }
+        public static System.Windows.Controls.ScrollViewer CurrentScrollViewer;
 
         private void btnSend_Click(object sender, RoutedEventArgs e)
         {
@@ -132,6 +136,103 @@ namespace MessengerClient
         private void chkboxSpellCheck_Click(object sender, RoutedEventArgs e)
         {
             txtMessage.SpellCheck.IsEnabled = (bool)chkboxSpellCheck.IsChecked;
+        }
+
+        private void userControl_Loaded(object sender, RoutedEventArgs e)
+        {
+            System.Windows.Interop.HwndSource WindowSource = (System.Windows.Interop.HwndSource)PresentationSource.FromVisual(this);
+            WindowSource.AddHook(WndProc);
+        }
+
+        private IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)
+        {
+
+            // Console.WriteLine(msg)
+            // If msg = &H11 Then
+            // MsgBox("Tst")
+            // End If
+
+            try
+            {
+                
+
+                if (msg == 526)
+                {
+                    try
+                    {
+
+                        if (wParam.ToInt32() > 0)
+                        {
+
+                            try
+                            {
+                                ScrollViewer Element = CurrentScrollViewer;
+                                    CurrentScrollViewer.ScrollToHorizontalOffset(Element.HorizontalOffset + System.Windows.Forms.SystemInformation.MouseWheelScrollLines * 10);
+                            }
+                            catch
+                            {
+                            }
+                        }
+                        else if (wParam.ToInt32() < 0)
+                        {
+                            try
+                            {
+                                ScrollViewer Element = CurrentScrollViewer;
+                                    CurrentScrollViewer.ScrollToHorizontalOffset(Element.HorizontalOffset - System.Windows.Forms.SystemInformation.MouseWheelScrollLines * 10);
+                            }
+                            catch
+                            {
+                            }
+                        }
+                    }
+                    catch (ArithmeticException ex)
+                    {
+                        try
+                        {
+                            ScrollViewer Element = CurrentScrollViewer;
+                                CurrentScrollViewer.ScrollToHorizontalOffset(Element.HorizontalOffset - System.Windows.Forms.SystemInformation.MouseWheelScrollLines * 10);
+                        }
+                        catch
+                        {
+                        }
+                      
+                    }
+                }
+            }
+            catch
+            {
+            }
+          
+
+
+           
+
+
+            return IntPtr.Zero;
+        }
+
+        private void ScrollViewer_MouseEnter(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                CurrentScrollViewer = (ScrollViewer)sender;
+            }
+            catch
+            {
+
+            }
+        }
+
+        private void ScrollViewer_MouseLeave(object sender, MouseEventArgs e)
+        {
+            try
+            {
+                CurrentScrollViewer = null;
+            }
+            catch
+            {
+
+            }
         }
     }
 }
